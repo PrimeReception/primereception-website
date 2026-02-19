@@ -2,8 +2,12 @@
 
 import { useState } from "react";
 
+const FORMSPREE_URL = "https://formspree.io/f/xnjbzrkr";
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,11 +24,28 @@ export default function ContactForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: Connect to Formspree, EmailJS, or your backend
-    // For now, just show a success state
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again or email us directly.");
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -183,12 +204,18 @@ export default function ContactForm() {
         </select>
       </div>
 
+      {/* Error message */}
+      {error && (
+        <p className="text-sm text-red-600 text-center">{error}</p>
+      )}
+
       {/* Submit */}
       <button
         type="submit"
-        className="w-full rounded-lg bg-teal px-6 py-3 text-base font-semibold text-white hover:bg-teal-dark transition-colors"
+        disabled={submitting}
+        className="w-full rounded-lg bg-teal px-6 py-3 text-base font-semibold text-white hover:bg-teal-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Submit & Book Your Demo
+        {submitting ? "Submitting..." : "Submit & Book Your Demo"}
       </button>
       <p className="text-xs text-gray-400 text-center">
         No obligation. We&apos;ll reach out within 2-4 hours.
