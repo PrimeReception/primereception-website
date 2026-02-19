@@ -55,10 +55,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-semibold text-navy">Phone</p>
                       <a
-                        href="tel:+14242588729"
+                        href="tel:+14247885134"
                         className="text-sm text-teal hover:underline"
                       >
-                        (424) 258-8729
+                        (424) 788-5134
                       </a>
                       <p className="text-xs text-gray-400 mt-1">
                         Call to hear our AI receptionist in action

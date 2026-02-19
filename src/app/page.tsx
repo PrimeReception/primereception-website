@@ -33,8 +33,8 @@ export default function Home() {
             </div>
             <p className="mt-6 text-sm text-gray-400">
               Try it now:{" "}
-              <a href="tel:+14242588729" className="text-teal hover:underline font-medium">
-                (424) 258-8729
+              <a href="tel:+14247885134" className="text-teal hover:underline font-medium">
+                (424) 788-5134
               </a>
             </p>
           </div>
@@ -561,10 +561,10 @@ export default function Home() {
                 Book Your Free Demo
               </Link>
               <a
-                href="tel:+14242588729"
+                href="tel:+14247885134"
                 className="w-full sm:w-auto rounded-lg border border-white/25 px-8 py-3.5 text-base font-semibold text-white hover:bg-white/10 transition-colors text-center"
               >
-                Call (424) 258-8729
+                Call (424) 788-5134
               </a>
             </div>
             <p className="mt-6 text-sm text-gray-400">
