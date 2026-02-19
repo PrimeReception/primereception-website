@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const CALENDLY_URL = "https://calendly.com/primereception/demo";
+const CALENDLY_URL = "https://calendly.com/admin-primereception/30min";
 
 export default function CalendlyEmbed() {
   useEffect(() => {
