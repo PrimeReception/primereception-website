@@ -27,9 +27,9 @@ export default function Home() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-gray-400">
-              Prefer to hear it live? Call the demo line:{" "}
-              <a href={`tel:${CONTACT.demoPhoneE164}`} className="text-teal hover:underline font-medium">
-                {CONTACT.demoPhoneDisplay}
+              Prefer to talk? Call us:{" "}
+              <a href={`tel:${CONTACT.phoneE164}`} className="text-teal hover:underline font-medium">
+                {CONTACT.phoneDisplay}
               </a>
             </p>
           </div>
