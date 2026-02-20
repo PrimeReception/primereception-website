@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTACT } from "@/lib/contact";
 import ROICalculator from "@/components/ROICalculator";
 import FAQAccordion from "@/components/FAQAccordion";
 
@@ -6,7 +7,7 @@ export default function Home() {
   return (
     <main>
       {/* ====== 1. HERO ====== */}
-      <section className="bg-navy text-white">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
@@ -17,37 +18,51 @@ export default function Home() {
               PrimeReception answers every call 24/7 with natural AI — so you
               never miss a lead, even when you&apos;re busy.
             </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="mt-10">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto rounded-lg bg-teal px-8 py-3.5 text-base font-semibold text-white hover:bg-teal-dark transition-colors text-center"
+                className="inline-block rounded-lg bg-teal px-8 py-3.5 text-base font-semibold text-white hover:bg-teal-dark hover:shadow-lg hover:shadow-teal/25 transition-all duration-200 text-center"
               >
                 Book a Demo
               </Link>
-              <Link
-                href="/how-it-works"
-                className="w-full sm:w-auto rounded-lg border border-white/25 px-8 py-3.5 text-base font-semibold text-white hover:bg-white/10 transition-colors text-center"
-              >
-                See How It Works
-              </Link>
             </div>
             <p className="mt-6 text-sm text-gray-400">
-              Try it now:{" "}
-              <a href="tel:+14247885134" className="text-teal hover:underline font-medium">
-                (424) 788-5134
+              Prefer to hear it live? Call the demo line:{" "}
+              <a href={`tel:${CONTACT.demoPhoneE164}`} className="text-teal hover:underline font-medium">
+                {CONTACT.demoPhoneDisplay}
               </a>
             </p>
           </div>
         </div>
       </section>
 
-      {/* ====== 2. TRUST BAR ====== */}
-      <section className="border-b border-gray-100 bg-white py-6">
+
+      {/* ====== 2. WHAT HAPPENS AFTER YOU BOOK ====== */}
+      <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-medium text-gray-500">
-            Trusted by dental offices, med spas, and service businesses across
-            the United States
-          </p>
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-2xl font-bold text-navy text-center sm:text-3xl">
+              What Happens After You Book a Demo
+            </h2>
+            <ol className="mt-10 space-y-5">
+              {[
+                "30-minute workflow discovery call",
+                "We review your intake process and call patterns",
+                "We design your custom call logic",
+                "We configure, test, and simulate real scenarios",
+                "You go live — typically within 5\u20137 business days",
+              ].map((step, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal/10 text-sm font-bold text-teal">
+                    {i + 1}
+                  </span>
+                  <span className="text-sm text-gray-700 leading-relaxed pt-1">
+                    {step}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 
@@ -64,19 +79,19 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <div className="rounded-xl bg-white p-8 text-center shadow-sm">
+            <div className="rounded-xl bg-white p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
               <p className="text-5xl font-extrabold text-teal">62%</p>
               <p className="mt-3 text-sm text-gray-600 leading-relaxed">
                 of calls to small businesses go unanswered
               </p>
             </div>
-            <div className="rounded-xl bg-white p-8 text-center shadow-sm">
+            <div className="rounded-xl bg-white p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
               <p className="text-5xl font-extrabold text-teal">85%</p>
               <p className="mt-3 text-sm text-gray-600 leading-relaxed">
                 of callers who don&apos;t get through never call back
               </p>
             </div>
-            <div className="rounded-xl bg-white p-8 text-center shadow-sm">
+            <div className="rounded-xl bg-white p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
               <p className="text-5xl font-extrabold text-teal">$2,500+</p>
               <p className="mt-3 text-sm text-gray-600 leading-relaxed">
                 lost per month from just 5 missed calls at $500 each
@@ -116,7 +131,7 @@ export default function Home() {
                   </svg>
                 ),
                 title: "Message Taking",
-                desc: "Detailed messages delivered instantly via email and SMS — never miss context.",
+                desc: "Detailed messages captured from every call so you never miss context.",
               },
               {
                 icon: (
@@ -124,8 +139,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 ),
-                title: "Appointment Scheduling",
-                desc: "Handles booking requests, confirms appointments, and manages your calendar.",
+                title: "Appointment Capture",
+                desc: "AI collects caller details, preferred times, and reason for visit so your team can confirm and book.",
               },
               {
                 icon: (
@@ -139,7 +154,7 @@ export default function Home() {
             ].map((service) => (
               <div
                 key={service.title}
-                className="rounded-xl border border-gray-100 p-6 hover:shadow-md transition-shadow"
+                className="rounded-xl border border-gray-100 p-6 hover:shadow-md hover:border-teal/30 hover:-translate-y-0.5 transition-all duration-200"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-teal/10 text-teal">
                   {service.icon}
@@ -182,7 +197,7 @@ export default function Home() {
               {
                 step: "3",
                 title: "Go Live in Days",
-                desc: "Your AI receptionist starts answering calls. You get messages, leads, and analytics — while you focus on your business.",
+                desc: "Your AI receptionist starts answering calls. You get messages and leads — while you focus on your business.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
@@ -226,7 +241,7 @@ export default function Home() {
               {
                 icon: "🦷",
                 title: "Dental Offices",
-                desc: "Never miss a patient call during procedures. We take messages, confirm appointments, and keep your front desk running — no HIPAA data stored.",
+                desc: "Never miss a patient call during procedures. We take messages, capture appointment requests, and keep your front desk running smoothly.",
               },
               {
                 icon: "💆",
@@ -256,7 +271,7 @@ export default function Home() {
             ].map((industry) => (
               <div
                 key={industry.title}
-                className="rounded-xl border border-gray-100 p-6 hover:shadow-md transition-shadow"
+                className="rounded-xl border border-gray-100 p-6 hover:shadow-md hover:border-teal/30 hover:-translate-y-0.5 transition-all duration-200"
               >
                 <span className="text-3xl">{industry.icon}</span>
                 <h3 className="mt-3 text-lg font-semibold text-navy">
@@ -280,11 +295,11 @@ export default function Home() {
       </section>
 
       {/* ====== 7. DONE-FOR-YOU ====== */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              100% Done-For-You Setup
+              100% Done-For-You Implementation
             </h2>
             <p className="mt-4 text-gray-300 leading-relaxed">
               You do zero technical work. We handle everything from start to
@@ -300,7 +315,7 @@ export default function Home() {
               "Call forwarding setup",
               "Integration & testing",
               "Go-live support",
-              "Unlimited revisions",
+              "Script revisions included",
               "Ongoing optimization",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3 py-2">
@@ -346,27 +361,28 @@ export default function Home() {
               Simple, Transparent Pricing
             </h2>
             <p className="mt-4 text-gray-600 leading-relaxed">
-              Less than $10/day for 24/7 professional call coverage. Compare to
-              $35,000+/year for a human receptionist.
+              Two plans. No long-term contracts. Less than $14/day for
+              professional AI call coverage.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 max-w-5xl mx-auto">
-            {/* Starter */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            {/* Core */}
             <div className="rounded-2xl border border-gray-200 p-8">
-              <h3 className="text-lg font-semibold text-navy">Starter</h3>
+              <h3 className="text-lg font-semibold text-navy">Core</h3>
               <div className="mt-4">
-                <span className="text-4xl font-extrabold text-charcoal">$149</span>
+                <span className="text-4xl font-extrabold text-charcoal">$249</span>
                 <span className="text-gray-500">/month</span>
               </div>
-              <p className="mt-2 text-xs text-gray-400">$500 one-time setup fee</p>
+              <p className="mt-2 text-xs text-gray-400">$750 one-time implementation package</p>
               <p className="mt-4 text-sm text-gray-600">
-                Best for solo practitioners and small offices just getting started.
+                Best for solo practitioners and small offices with moderate call volume.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
-                  "Up to 100 calls/month",
-                  "Business hours coverage",
-                  "Message taking + email summaries",
+                  "AI-powered call answering",
+                  "Business hours coverage (M-F)",
+                  "Message taking & lead capture",
+                  "Appointment capture",
                   "Basic FAQ handling",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
@@ -385,28 +401,27 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Professional */}
+            {/* Pro */}
             <div className="rounded-2xl border-2 border-teal p-8 relative shadow-lg">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-semibold text-white">
                 Most Popular
               </div>
-              <h3 className="text-lg font-semibold text-navy">Professional</h3>
+              <h3 className="text-lg font-semibold text-navy">Pro</h3>
               <div className="mt-4">
-                <span className="text-4xl font-extrabold text-charcoal">$299</span>
+                <span className="text-4xl font-extrabold text-charcoal">$399</span>
                 <span className="text-gray-500">/month</span>
               </div>
-              <p className="mt-2 text-xs text-gray-400">$2,500 one-time setup fee</p>
+              <p className="mt-2 text-xs text-gray-400">$2,000 one-time implementation package</p>
               <p className="mt-4 text-sm text-gray-600">
-                Best for dental offices, med spas, and auto body shops with steady call volume.
+                Best for dental offices, med spas, and busy service businesses.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
-                  "Unlimited calls",
-                  "24/7 coverage incl. weekends",
-                  "Real-time email/SMS notifications",
+                  "Everything in Core",
+                  "24/7 coverage incl. weekends & holidays",
+                  "Designed for high call volume",
                   "Custom FAQ & script training",
-                  "Appointment scheduling",
-                  "Monthly analytics report",
+                  "SMS call alerts (coming soon)",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
                     <svg className="h-5 w-5 shrink-0 text-green mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -423,42 +438,6 @@ export default function Home() {
                 Get Started
               </Link>
             </div>
-
-            {/* Enterprise */}
-            <div className="rounded-2xl border border-gray-200 p-8">
-              <h3 className="text-lg font-semibold text-navy">Enterprise</h3>
-              <div className="mt-4">
-                <span className="text-4xl font-extrabold text-charcoal">$499</span>
-                <span className="text-gray-500">/month</span>
-              </div>
-              <p className="mt-2 text-xs text-gray-400">$2,500 one-time setup fee</p>
-              <p className="mt-4 text-sm text-gray-600">
-                Best for multi-location practices and growing businesses.
-              </p>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "Everything in Professional",
-                  "Multi-location support (5 numbers)",
-                  "Priority voice optimization",
-                  "Dedicated account manager",
-                  "Custom integrations (CRM, etc.)",
-                  "Quarterly business reviews",
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
-                    <svg className="h-5 w-5 shrink-0 text-green mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="mt-8 block w-full rounded-lg border border-teal py-3 text-center text-sm font-semibold text-teal hover:bg-teal hover:text-white transition-colors"
-              >
-                Get Started
-              </Link>
-            </div>
           </div>
           <div className="mt-10 text-center">
             <Link
@@ -471,61 +450,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== 10. TESTIMONIALS ====== */}
+      {/* ====== 10. PILOT AVAILABILITY ====== */}
       <section className="bg-gray-bg py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-12">
+          <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-navy sm:text-4xl">
-              What Business Owners Are Saying
+              Pilot Availability
             </h2>
-          </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 max-w-5xl mx-auto">
-            {[
-              {
-                quote:
-                  "We were missing 10+ calls a week during procedures. PrimeReception catches every single one now.",
-                name: "Dr. Sarah M.",
-                role: "Dental Office Owner",
-              },
-              {
-                quote:
-                  "The setup was completely hands-off. They had us live in 4 days and the AI sounds incredibly natural.",
-                name: "James R.",
-                role: "Auto Body Shop Owner",
-              },
-              {
-                quote:
-                  "Our after-hours bookings increased 40% in the first month. The ROI was immediate.",
-                name: "Lisa K.",
-                role: "Med Spa Director",
-              },
-            ].map((testimonial) => (
-              <div
-                key={testimonial.name}
-                className="rounded-xl bg-white p-6 shadow-sm"
+            <p className="mt-6 text-gray-600 leading-relaxed">
+              Now onboarding a limited number of pilot customers.
+            </p>
+            <p className="mt-2 text-gray-600 leading-relaxed">
+              Direct founder support included. Discounted implementation.
+            </p>
+            <div className="mt-10">
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-teal px-8 py-3.5 text-base font-semibold text-white hover:bg-teal-dark transition-colors"
               >
-                <div className="flex gap-1 text-teal mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed italic">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <p className="text-sm font-semibold text-navy">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-xs text-gray-500">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
+                Book a Demo
+              </Link>
+            </div>
           </div>
-          <p className="mt-8 text-center text-xs text-gray-400">
-            * Placeholder testimonials — will be updated with real client reviews
-          </p>
         </div>
       </section>
 
@@ -542,7 +488,7 @@ export default function Home() {
       </section>
 
       {/* ====== 12. CTA / DEMO BOOKING ====== */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">
@@ -561,10 +507,10 @@ export default function Home() {
                 Book Your Free Demo
               </Link>
               <a
-                href="tel:+14247885134"
+                href={`tel:${CONTACT.phoneE164}`}
                 className="w-full sm:w-auto rounded-lg border border-white/25 px-8 py-3.5 text-base font-semibold text-white hover:bg-white/10 transition-colors text-center"
               >
-                Call (424) 788-5134
+                Call {CONTACT.phoneDisplay}
               </a>
             </div>
             <p className="mt-6 text-sm text-gray-400">

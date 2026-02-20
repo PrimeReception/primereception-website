@@ -21,27 +21,27 @@ const faqs = [
   {
     question: "What happens if someone needs to speak to a human?",
     answer:
-      "Your AI receptionist can transfer calls to you or your team based on rules you set. Urgent calls get forwarded immediately. Everything else becomes a detailed message delivered to your email or phone.",
+      "Your AI receptionist can transfer calls to you or your team based on rules you set. Urgent calls get forwarded immediately. Everything else is captured as a detailed message for your team to follow up on.",
   },
   {
-    question: "Do you store sensitive medical information (HIPAA)?",
+    question: "How do you handle sensitive information (HIPAA)?",
     answer:
-      "No. PrimeReception takes messages, answers FAQs, and routes calls. We do not collect, store, or process protected health information. This makes us a safe, low-risk solution for dental offices and healthcare-adjacent businesses.",
+      "PrimeReception is designed to minimize sensitive information collection. If your workflow involves protected health information, we configure call handling to limit what's captured and route appropriately. You remain responsible for your compliance requirements, and we'll align configuration to your policies and vendor agreements.",
   },
   {
     question: "Can I customize how the AI responds?",
     answer:
-      "Yes. During setup, we craft custom scripts, FAQs, and response patterns specific to your business. You can request changes anytime — unlimited revisions are included.",
+      "Yes. During setup, we craft custom scripts, FAQs, and response patterns specific to your business. Script revisions are included with every plan, and Pro plan customers get ongoing refinements.",
   },
   {
     question: "What if I want to cancel?",
     answer:
-      "No long-term contracts. You can cancel your monthly plan anytime. The one-time setup fee is non-refundable as it covers the work already completed.",
+      "Month-to-month. Cancel anytime with 5 days' notice before your next billing date. No long-term contracts, no cancellation fees. The one-time implementation package fee is non-refundable as it covers the work already completed.",
   },
   {
-    question: "What's included in the setup fee?",
+    question: "What's included in the implementation package?",
     answer:
-      "Everything: custom AI voice personality configuration, call script writing, FAQ training, phone number setup, integration with your forwarding number, testing, quality assurance, and go-live support.",
+      "Everything: workflow review, call logic design, custom intake flow configuration, routing rules, AI voice tuning, call script writing, FAQ training, phone number setup, test scenario coverage, and go-live management.",
   },
 ];
 
@@ -54,13 +54,13 @@ export default function FAQAccordion() {
         <div key={i}>
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            className="flex w-full items-center justify-between py-5 text-left"
+            className="flex w-full items-center justify-between py-5 text-left group"
           >
-            <span className="text-base font-medium text-charcoal pr-4">
+            <span className="text-base font-medium text-charcoal pr-4 group-hover:text-teal transition-colors">
               {faq.question}
             </span>
             <svg
-              className={`h-5 w-5 shrink-0 text-teal transition-transform ${
+              className={`h-5 w-5 shrink-0 text-teal transition-transform duration-200 ${
                 openIndex === i ? "rotate-180" : ""
               }`}
               fill="none"
@@ -75,11 +75,19 @@ export default function FAQAccordion() {
               />
             </svg>
           </button>
-          {openIndex === i && (
-            <p className="pb-5 text-sm leading-relaxed text-gray-600">
-              {faq.answer}
-            </p>
-          )}
+          <div
+            className={`grid transition-all duration-200 ease-in-out ${
+              openIndex === i
+                ? "grid-rows-[1fr] opacity-100"
+                : "grid-rows-[0fr] opacity-0"
+            }`}
+          >
+            <div className="overflow-hidden">
+              <p className="pb-5 text-sm leading-relaxed text-gray-600">
+                {faq.answer}
+              </p>
+            </div>
+          </div>
         </div>
       ))}
     </div>

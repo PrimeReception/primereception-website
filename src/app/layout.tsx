@@ -10,11 +10,51 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PrimeReception — AI Receptionist for Small Businesses | Never Miss a Call",
+  title: {
+    default:
+      "PrimeReception — AI Receptionist for Small Businesses | Never Miss a Call",
+    template: "%s | PrimeReception",
+  },
   description:
     "PrimeReception answers every call 24/7 with natural AI so you never miss a lead. Done-for-you AI receptionist for dental offices, med spas, auto body shops & more.",
-  keywords:
-    "AI receptionist, AI phone answering service, virtual receptionist, 24/7 answering service, dental office receptionist, med spa receptionist",
+  keywords: [
+    "AI receptionist",
+    "AI phone answering service",
+    "virtual receptionist",
+    "24/7 answering service",
+    "dental office receptionist",
+    "med spa receptionist",
+    "auto body shop answering service",
+    "law office answering service",
+    "small business phone answering",
+    "AI call answering",
+  ],
+  authors: [{ name: "PrimeReception" }],
+  creator: "PrimeReception",
+  metadataBase: new URL("https://primereception.com"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "PrimeReception",
+    title:
+      "PrimeReception — AI Receptionist for Small Businesses | Never Miss a Call",
+    description:
+      "PrimeReception answers every call 24/7 with natural AI so you never miss a lead. Done-for-you setup. Plans from $249/month.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PrimeReception — AI Receptionist for Small Businesses",
+    description:
+      "Stop losing customers to missed calls. PrimeReception answers every call 24/7 with natural AI. Plans from $249/month.",
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

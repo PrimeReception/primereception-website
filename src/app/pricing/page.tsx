@@ -3,68 +3,48 @@ import Link from "next/link";
 import ROICalculator from "@/components/ROICalculator";
 
 export const metadata: Metadata = {
-  title: "Pricing — AI Receptionist Plans Starting at $149/mo | PrimeReception",
+  title: "Pricing — AI Receptionist Plans Starting at $249/mo",
   description:
-    "Simple, transparent AI receptionist pricing. Plans from $149/month. Less than $10/day for 24/7 professional call coverage. No long-term contracts.",
+    "Simple, transparent AI receptionist pricing. Two plans, no long-term contracts. Core at $249/month, Pro at $399/month. Less than $14/day for professional call coverage.",
 };
 
 const plans = [
   {
-    name: "Starter",
-    price: "$149",
-    setup: "$500",
-    desc: "Best for solo practitioners and small offices just getting started.",
+    name: "Core",
+    price: "$249",
+    implementation: "$750",
+    desc: "Best for solo practitioners and small offices with moderate call volume.",
     popular: false,
     features: [
-      { text: "Up to 100 calls/month", included: true },
-      { text: "Business hours coverage (M-F 8am-6pm)", included: true },
-      { text: "Message taking + email summaries", included: true },
-      { text: "Basic FAQ handling", included: true },
-      { text: "1 call forwarding number", included: true },
-      { text: "24/7 coverage", included: false },
-      { text: "SMS notifications", included: false },
-      { text: "Custom script training", included: false },
-      { text: "Appointment scheduling", included: false },
-      { text: "Monthly analytics report", included: false },
-      { text: "Multi-location support", included: false },
-      { text: "Dedicated account manager", included: false },
-      { text: "Custom integrations", included: false },
+      "AI-powered call answering",
+      "Business hours coverage (M-F 8am–6pm)",
+      "Message taking & lead capture",
+      "Basic FAQ handling",
+      "Appointment capture",
+      "1 call forwarding number",
+      "Custom greeting script",
+      "1 script revision included",
+      "Email support",
     ],
   },
   {
-    name: "Professional",
-    price: "$299",
-    setup: "$2,500",
-    desc: "Best for dental offices, med spas, and auto body shops with steady call volume.",
+    name: "Pro",
+    price: "$399",
+    implementation: "$2,000",
+    desc: "Best for dental offices, med spas, and busy service businesses with steady call volume.",
     popular: true,
     features: [
-      { text: "Unlimited calls", included: true },
-      { text: "24/7 coverage incl. weekends & holidays", included: true },
-      { text: "Message taking + real-time email/SMS", included: true },
-      { text: "Custom FAQ & script training", included: true },
-      { text: "Up to 3 call forwarding numbers", included: true },
-      { text: "Appointment scheduling assistance", included: true },
-      { text: "Monthly call analytics report", included: true },
-      { text: "Custom script training", included: true },
-      { text: "Appointment scheduling", included: true },
-      { text: "Multi-location support", included: false },
-      { text: "Dedicated account manager", included: false },
-      { text: "Custom integrations", included: false },
-    ],
-  },
-  {
-    name: "Enterprise",
-    price: "$499",
-    setup: "$2,500",
-    desc: "Best for multi-location practices and growing businesses.",
-    popular: false,
-    features: [
-      { text: "Everything in Professional", included: true },
-      { text: "Multi-location support (up to 5 numbers)", included: true },
-      { text: "Priority voice optimization", included: true },
-      { text: "Dedicated account manager", included: true },
-      { text: "Custom integrations (CRM, calendar, etc.)", included: true },
-      { text: "Quarterly business review calls", included: true },
+      "Everything in Core",
+      "24/7 coverage incl. weekends & holidays",
+      "Designed for high call volume*",
+      "Custom FAQ & script training",
+      "Up to 3 call forwarding numbers",
+      "SMS call alerts (coming soon)",
+      "Priority voice & script optimization",
+      "Ongoing script & FAQ refinements",
+      "30-day optimization window post-launch",
+      "Priority support",
+      "Founder-led onboarding & optimization",
     ],
   },
 ];
@@ -73,15 +53,15 @@ export default function Pricing() {
   return (
     <main>
       {/* HERO */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
               Simple, Transparent Pricing
             </h1>
             <p className="mt-6 text-lg text-gray-300 leading-relaxed">
-              Less than $10/day for 24/7 professional call coverage. Compare to
-              $35,000+/year for a human receptionist.
+              Two plans. No long-term contracts. Less than $14/day for
+              professional AI call coverage.
             </p>
           </div>
         </div>
@@ -90,7 +70,7 @@ export default function Pricing() {
       {/* PRICING CARDS */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">
             {plans.map((plan) => (
               <div
                 key={plan.name}
@@ -113,27 +93,19 @@ export default function Pricing() {
                   <span className="text-gray-500">/month</span>
                 </div>
                 <p className="mt-2 text-xs text-gray-400">
-                  {plan.setup} one-time setup fee
+                  {plan.implementation} one-time implementation package
                 </p>
                 <p className="mt-4 text-sm text-gray-600">{plan.desc}</p>
                 <ul className="mt-6 space-y-3">
                   {plan.features.map((f) => (
                     <li
-                      key={f.text}
+                      key={f}
                       className="flex items-start gap-2 text-sm"
                     >
-                      {f.included ? (
-                        <svg className="h-5 w-5 shrink-0 text-green mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      ) : (
-                        <svg className="h-5 w-5 shrink-0 text-gray-300 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                        </svg>
-                      )}
-                      <span className={f.included ? "text-gray-600" : "text-gray-400"}>
-                        {f.text}
-                      </span>
+                      <svg className="h-5 w-5 shrink-0 text-green mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-gray-600">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -150,6 +122,9 @@ export default function Pricing() {
               </div>
             ))}
           </div>
+          <p className="mt-6 text-center text-xs text-gray-400">
+            *Plans are designed for typical small business call patterns. Excessive or abusive usage may require plan adjustment.
+          </p>
         </div>
       </section>
 
@@ -161,7 +136,7 @@ export default function Pricing() {
               Feature Comparison
             </h2>
           </div>
-          <div className="mx-auto max-w-4xl overflow-x-auto">
+          <div className="mx-auto max-w-3xl overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-200">
@@ -169,40 +144,38 @@ export default function Pricing() {
                     Feature
                   </th>
                   <th className="px-4 py-4 text-center font-semibold text-navy">
-                    Starter
+                    Core
                   </th>
                   <th className="px-4 py-4 text-center font-semibold text-teal">
-                    Professional
-                  </th>
-                  <th className="px-4 py-4 text-center font-semibold text-navy">
-                    Enterprise
+                    Pro
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { feature: "Monthly price", starter: "$149", pro: "$299", enterprise: "$499" },
-                  { feature: "Setup fee", starter: "$500", pro: "$2,500", enterprise: "$2,500" },
-                  { feature: "Calls included", starter: "100/mo", pro: "Unlimited", enterprise: "Unlimited" },
-                  { feature: "Coverage hours", starter: "Business hours", pro: "24/7", enterprise: "24/7" },
-                  { feature: "Message taking", starter: true, pro: true, enterprise: true },
-                  { feature: "Email summaries", starter: true, pro: true, enterprise: true },
-                  { feature: "SMS notifications", starter: false, pro: true, enterprise: true },
-                  { feature: "Custom FAQ training", starter: false, pro: true, enterprise: true },
-                  { feature: "Custom scripts", starter: false, pro: true, enterprise: true },
-                  { feature: "Appointment scheduling", starter: false, pro: true, enterprise: true },
-                  { feature: "Call forwarding numbers", starter: "1", pro: "3", enterprise: "5" },
-                  { feature: "Analytics reports", starter: false, pro: "Monthly", enterprise: "Monthly" },
-                  { feature: "Multi-location support", starter: false, pro: false, enterprise: true },
-                  { feature: "Dedicated account manager", starter: false, pro: false, enterprise: true },
-                  { feature: "Custom integrations", starter: false, pro: false, enterprise: true },
-                  { feature: "Quarterly business reviews", starter: false, pro: false, enterprise: true },
+                  { feature: "Monthly price", core: "$249", pro: "$399" },
+                  { feature: "Implementation package", core: "$750", pro: "$2,000" },
+                  { feature: "Coverage hours", core: "Business hours", pro: "24/7" },
+                  { feature: "Call volume", core: "Standard", pro: "High volume*" },
+                  { feature: "AI-powered call answering", core: true, pro: true },
+                  { feature: "Message taking & lead capture", core: true, pro: true },
+                  { feature: "Basic FAQ handling", core: true, pro: true },
+                  { feature: "Appointment capture", core: true, pro: true },
+                  { feature: "Custom greeting script", core: true, pro: true },
+                  { feature: "Custom FAQ & script training", core: false, pro: true },
+                  { feature: "Call forwarding numbers", core: "1", pro: "Up to 3" },
+                  { feature: "SMS call alerts (coming soon)", core: false, pro: true },
+                  { feature: "Voice & script optimization", core: "Standard voice setup", pro: "Priority voice & script optimization" },
+                  { feature: "Script revisions", core: "1 revision included", pro: "Ongoing refinements" },
+                  { feature: "Post-launch optimization", core: false, pro: "30-day window" },
+                  { feature: "Priority support", core: false, pro: true },
+                  { feature: "Onboarding experience", core: "Standard", pro: "Founder-led" },
                 ].map((row) => (
                   <tr key={row.feature} className="border-b border-gray-100">
                     <td className="py-3 pr-4 text-gray-700 font-medium">
                       {row.feature}
                     </td>
-                    {[row.starter, row.pro, row.enterprise].map((val, i) => (
+                    {[row.core, row.pro].map((val, i) => (
                       <td key={i} className="px-4 py-3 text-center">
                         {typeof val === "boolean" ? (
                           val ? (
@@ -210,7 +183,7 @@ export default function Pricing() {
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
                           ) : (
-                            <span className="text-gray-300">—</span>
+                            <span className="text-gray-300">&mdash;</span>
                           )
                         ) : (
                           <span className="text-gray-600">{val}</span>
@@ -221,53 +194,52 @@ export default function Pricing() {
                 ))}
               </tbody>
             </table>
+            <p className="mt-4 text-xs text-gray-400">
+              *Plans are designed for typical small business call patterns. Excessive or abusive usage may require plan adjustment.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* SETUP FEE EXPLANATION */}
+      {/* IMPLEMENTATION PACKAGE EXPLANATION */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold text-navy sm:text-4xl text-center mb-8">
-              About the Setup Fee
+              About Your Implementation Package
             </h2>
             <div className="rounded-2xl bg-gray-bg p-8">
               <p className="text-gray-600 leading-relaxed mb-6">
-                Your setup fee covers complete configuration — custom voice
-                personality, call scripts tailored to your business, FAQ
-                training, phone number provisioning, testing, and go-live
-                support. <strong>You do nothing. We handle everything.</strong>
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
                 This is a one-time, non-refundable fee because it covers real
                 work already completed by our team. Most competitors charge
-                monthly for basic self-serve setup. We invest upfront so your AI
-                receptionist is perfectly configured from day one.
+                monthly for basic self-serve setup. We invest upfront so your
+                AI receptionist is perfectly configured from day one.{" "}
+                <strong>You do nothing technical. We handle everything.</strong>
               </p>
               <div className="rounded-xl bg-white p-6 border border-gray-100">
-                <p className="text-sm font-semibold text-navy mb-3">
-                  What&apos;s included:
+                <p className="text-sm font-semibold text-navy mb-4">
+                  Included in your Implementation Package:
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <ul className="space-y-2.5">
                   {[
-                    "Custom AI voice configuration",
-                    "Call script writing",
-                    "FAQ training & programming",
-                    "Phone number setup",
-                    "Call forwarding integration",
-                    "End-to-end testing",
-                    "Go-live support",
-                    "Unlimited revisions",
+                    "Workflow review call",
+                    "Call logic design",
+                    "Intake flow configuration",
+                    "Routing & escalation setup",
+                    "Voice tone tuning",
+                    "Script writing & FAQ training",
+                    "Phone number provisioning",
+                    "Test scenarios & simulations",
+                    "Go-live management",
                   ].map((item) => (
-                    <div key={item} className="flex items-center gap-2">
+                    <li key={item} className="flex items-center gap-2.5">
                       <svg className="h-4 w-4 text-green shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span className="text-sm text-gray-600">{item}</span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           </div>
@@ -285,13 +257,13 @@ export default function Pricing() {
               <span className="text-sm font-semibold text-green">No Long-Term Contracts</span>
             </div>
             <h2 className="text-2xl font-bold text-navy">
-              Cancel Anytime. No Questions Asked.
+              No Long-Term Commitments
             </h2>
             <p className="mt-4 text-gray-600 leading-relaxed">
-              We earn your business every month. If PrimeReception isn&apos;t
-              delivering value, you can cancel your monthly plan anytime. The
-              one-time setup fee is non-refundable as it covers work already
-              completed.
+              Month-to-month. Cancel anytime with 5 days&apos; notice before
+              your next billing date. No long-term contracts, no cancellation
+              fees. The one-time implementation package fee is non-refundable
+              as it covers work already completed.
             </p>
           </div>
         </div>
@@ -315,7 +287,7 @@ export default function Pricing() {
       </section>
 
       {/* CTA */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">

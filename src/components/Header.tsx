@@ -12,9 +12,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy">
-              <span className="text-lg font-bold text-white">P</span>
-            </div>
+            <img src="/icon.svg" alt="" width={36} height={36} className="shrink-0" />
             <span className="text-xl font-bold text-navy">
               Prime<span className="text-teal">Reception</span>
             </span>

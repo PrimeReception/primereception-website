@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { CONTACT } from "@/lib/contact";
 import ContactForm from "@/components/ContactForm";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 export const metadata: Metadata = {
-  title: "Book a Demo — AI Receptionist for Your Business | PrimeReception",
+  title: "Book a Demo — AI Receptionist for Your Business",
   description:
     "Book a free demo of PrimeReception's AI receptionist. See how we can answer your calls 24/7. No obligation, no pressure.",
 };
@@ -12,7 +13,7 @@ export default function Contact() {
   return (
     <main>
       {/* HERO */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
@@ -55,10 +56,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-semibold text-navy">Phone</p>
                       <a
-                        href="tel:+14247885134"
+                        href={`tel:${CONTACT.phoneE164}`}
                         className="text-sm text-teal hover:underline"
                       >
-                        (424) 788-5134
+                        {CONTACT.phoneDisplay}
                       </a>
                       <p className="text-xs text-gray-400 mt-1">
                         Call to hear our AI receptionist in action
@@ -76,10 +77,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-semibold text-navy">Email</p>
                       <a
-                        href="mailto:hello@primereception.com"
+                        href={`mailto:${CONTACT.email}`}
                         className="text-sm text-teal hover:underline"
                       >
-                        hello@primereception.com
+                        {CONTACT.email}
                       </a>
                       <p className="text-xs text-gray-400 mt-1">
                         We typically respond within 2-4 hours

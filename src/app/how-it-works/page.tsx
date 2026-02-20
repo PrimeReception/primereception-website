@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How It Works — 100% Done-For-You AI Receptionist Setup | PrimeReception",
+  title: "How It Works — 100% Done-For-You AI Receptionist Implementation",
   description:
     "See how PrimeReception sets up your AI receptionist in 5 business days. We handle everything — voice setup, scripts, FAQ training, and go-live support.",
 };
@@ -11,7 +11,7 @@ export default function HowItWorks() {
   return (
     <main>
       {/* HERO */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
@@ -54,7 +54,7 @@ export default function HowItWorks() {
               {
                 step: "3",
                 title: "Go Live & Start Capturing Calls",
-                desc: "After testing and your approval, we flip the switch. Your AI receptionist starts answering calls immediately — 24/7 if you choose the Professional or Enterprise plan.",
+                desc: "After testing and your approval, we flip the switch. Your AI receptionist starts answering calls immediately — 24/7 if you choose the Pro plan.",
                 icon: (
                   <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -81,16 +81,16 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* WHAT THE SETUP FEE COVERS */}
+      {/* WHAT THE IMPLEMENTATION PACKAGE COVERS */}
       <section className="bg-gray-bg py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
             <h2 className="text-3xl font-bold text-navy sm:text-4xl">
-              What Your Setup Fee Covers
+              What Your Implementation Package Covers
             </h2>
             <p className="mt-4 text-gray-600 leading-relaxed">
-              Your one-time setup fee covers complete, end-to-end configuration.
-              Here&apos;s exactly what we do for you.
+              Your one-time implementation package covers complete, end-to-end
+              configuration. Here&apos;s exactly what we do for you.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
@@ -124,8 +124,8 @@ export default function HowItWorks() {
                 desc: "We monitor your first week of calls closely, making real-time adjustments to ensure everything runs smoothly.",
               },
               {
-                title: "Unlimited Revisions",
-                desc: "Not happy with a script or FAQ response? We revise until it's exactly right. No extra charges, no limits.",
+                title: "Script Revisions Included",
+                desc: "Not happy with a script or FAQ response? Every plan includes revisions during implementation. Pro plan customers get ongoing refinements post-launch.",
               },
               {
                 title: "Ongoing Optimization",
@@ -134,7 +134,7 @@ export default function HowItWorks() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl bg-white p-6 shadow-sm"
+                className="rounded-xl bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <svg className="h-5 w-5 text-green shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -266,7 +266,7 @@ export default function HowItWorks() {
               {
                 time: "8:15 AM",
                 event: "New patient calls to ask about teeth whitening services",
-                result: "AI answers with your service details and pricing, offers to schedule a consultation. You get an email with the lead's contact info.",
+                result: "AI answers with your service details and pricing, offers to schedule a consultation. The lead's contact info is captured for your team to follow up.",
               },
               {
                 time: "10:30 AM",
@@ -296,7 +296,7 @@ export default function HowItWorks() {
             ].map((item) => (
               <div
                 key={item.time}
-                className="rounded-xl border border-gray-100 p-6 hover:shadow-sm transition-shadow"
+                className="rounded-xl border border-gray-100 p-6 hover:shadow-md hover:border-teal/30 transition-all duration-200"
               >
                 <div className="flex items-start gap-4">
                   <span className="shrink-0 rounded-lg bg-navy px-3 py-1.5 text-xs font-bold text-white">
@@ -318,7 +318,7 @@ export default function HowItWorks() {
       </section>
 
       {/* CTA */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">

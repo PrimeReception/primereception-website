@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Industries We Serve — AI Receptionist for Dental, Med Spa, Auto & More",
@@ -20,7 +21,7 @@ const industries = [
       "Hiring another front desk person costs $30,000-$40,000/year",
     ],
     solution:
-      "PrimeReception answers every call — during procedures, at lunch, after hours, and on weekends. We take messages, answer common questions about services and insurance, and capture new patient leads. No HIPAA data is stored — we take messages, not medical records.",
+      "PrimeReception answers every call — during procedures, at lunch, after hours, and on weekends. We take messages, answer common questions about services and insurance, and capture new patient leads. Call handling is configured to minimize sensitive information collection and route appropriately.",
     scenario: {
       caller: "New patient calling about teeth whitening pricing",
       ai: "Thanks for calling Bright Smile Dental! I'd be happy to help. Our professional teeth whitening starts at $350 for in-office treatment. Would you like me to schedule a free consultation with Dr. Miller? I have openings this Thursday at 2pm or Friday at 10am.",
@@ -166,7 +167,7 @@ export default function Industries() {
   return (
     <main>
       {/* HERO */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
@@ -252,7 +253,7 @@ export default function Industries() {
               </div>
 
               {/* Example call */}
-              <div className="mt-10 rounded-xl border border-gray-200 overflow-hidden">
+              <div className="mt-10 rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200">
                 <div className="bg-navy px-6 py-3">
                   <p className="text-sm font-semibold text-white">
                     Example Call Scenario
@@ -283,7 +284,7 @@ export default function Industries() {
       ))}
 
       {/* CTA */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-br from-navy via-navy to-navy-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">
@@ -302,10 +303,10 @@ export default function Industries() {
                 Book Your Free Demo
               </Link>
               <a
-                href="tel:+14247885134"
+                href={`tel:${CONTACT.phoneE164}`}
                 className="w-full sm:w-auto rounded-lg border border-white/25 px-8 py-3.5 text-base font-semibold text-white hover:bg-white/10 transition-colors text-center"
               >
-                Call (424) 788-5134
+                Call {CONTACT.phoneDisplay}
               </a>
             </div>
           </div>

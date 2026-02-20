@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTACT } from "@/lib/contact";
 
 export default function Footer() {
   return (
@@ -8,9 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal">
-                <span className="text-lg font-bold text-white">P</span>
-              </div>
+              <img src="/icon-light.svg" alt="" width={36} height={36} className="shrink-0" />
               <span className="text-xl font-bold">
                 Prime<span className="text-teal">Reception</span>
               </span>
@@ -86,18 +85,18 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               <li>
                 <a
-                  href="tel:+14247885134"
+                  href={`tel:${CONTACT.phoneE164}`}
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
-                  (424) 788-5134
+                  {CONTACT.phoneDisplay}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:hello@primereception.com"
+                  href={`mailto:${CONTACT.email}`}
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
-                  hello@primereception.com
+                  {CONTACT.email}
                 </a>
               </li>
               <li>

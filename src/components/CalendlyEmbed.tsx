@@ -39,10 +39,6 @@ export default function CalendlyEmbed() {
           </a>
         </div>
       </noscript>
-      <p className="mt-4 text-center text-xs text-gray-400">
-        Placeholder Calendly URL — update with your actual Calendly link once
-        your account is created.
-      </p>
     </div>
   );
 }
