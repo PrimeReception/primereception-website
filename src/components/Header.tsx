@@ -33,7 +33,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-[72px] items-center justify-between">
+        <div className="flex py-3 items-center justify-between">
           {/* Hamburger — left */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -56,9 +56,9 @@ export default function Header() {
             <img
               src="/icon.png"
               alt="PrimeReception"
-              width={44}
-              height={44}
-              className="shrink-0 rounded-xl"
+              width={120}
+              height={120}
+              className="shrink-0 rounded-2xl"
             />
             <span
               className={`text-xl font-bold transition-colors ${
