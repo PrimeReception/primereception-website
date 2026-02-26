@@ -1,126 +1,118 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomepage = pathname === "/";
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  const transparent = isHomepage && !scrolled && !mobileOpen;
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        transparent
+          ? "bg-transparent"
+          : "bg-white shadow-sm"
+      }`}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/icon.svg" alt="" width={36} height={36} className="shrink-0" />
-            <span className="text-xl font-bold text-navy">
-              Prime<span className="text-teal">Reception</span>
-            </span>
-          </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-8 md:flex">
-            <Link
-              href="/how-it-works"
-              className="text-sm font-medium text-charcoal hover:text-teal transition-colors"
-            >
-              How It Works
-            </Link>
-            <Link
-              href="/pricing"
-              className="text-sm font-medium text-charcoal hover:text-teal transition-colors"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/industries"
-              className="text-sm font-medium text-charcoal hover:text-teal transition-colors"
-            >
-              Industries
-            </Link>
-            <Link
-              href="/about"
-              className="text-sm font-medium text-charcoal hover:text-teal transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-lg bg-teal px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-dark transition-colors"
-            >
-              Book a Demo
-            </Link>
-          </nav>
-
-          {/* Mobile menu button */}
+        <div className="flex h-[72px] items-center justify-between">
+          {/* Hamburger — left */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-charcoal"
+            className={`p-2 transition-colors ${
+              transparent ? "text-white" : "text-navy"
+            }`}
             aria-label="Toggle menu"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
+
+          {/* Centered logo */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
+            <img
+              src={transparent ? "/icon-light.svg" : "/icon.svg"}
+              alt=""
+              width={32}
+              height={32}
+              className="shrink-0"
+            />
+            <span
+              className={`text-xl font-bold transition-colors ${
+                transparent ? "text-white" : "text-navy"
+              }`}
+            >
+              Prime<span className="text-coral">Reception</span>
+            </span>
+          </Link>
+
+          {/* Right — GET STARTED */}
+          <Link
+            href="/contact"
+            className="hidden sm:inline-block rounded bg-coral px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-coral-hover transition-colors"
+          >
+            Get Started
+          </Link>
+          {/* Mobile spacer so logo stays centered */}
+          <div className="w-10 sm:hidden" />
         </div>
 
-        {/* Mobile nav */}
+        {/* Slide-down nav */}
         {mobileOpen && (
-          <nav className="border-t border-gray-100 pb-4 md:hidden">
-            <div className="flex flex-col gap-3 pt-4">
-              <Link
-                href="/how-it-works"
-                className="px-2 py-2 text-sm font-medium text-charcoal hover:text-teal"
-                onClick={() => setMobileOpen(false)}
-              >
-                How It Works
-              </Link>
-              <Link
-                href="/pricing"
-                className="px-2 py-2 text-sm font-medium text-charcoal hover:text-teal"
-                onClick={() => setMobileOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link
-                href="/industries"
-                className="px-2 py-2 text-sm font-medium text-charcoal hover:text-teal"
-                onClick={() => setMobileOpen(false)}
-              >
-                Industries
-              </Link>
-              <Link
-                href="/about"
-                className="px-2 py-2 text-sm font-medium text-charcoal hover:text-teal"
-                onClick={() => setMobileOpen(false)}
-              >
-                About
-              </Link>
+          <nav
+            className={`border-t pb-6 ${
+              transparent ? "border-white/10" : "border-gray-100"
+            }`}
+          >
+            <div className="flex flex-col gap-1 pt-4">
+              {[
+                { href: "/how-it-works", label: "How It Works" },
+                { href: "/pricing", label: "Pricing" },
+                { href: "/industries", label: "Industries" },
+                { href: "/about", label: "About" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-2 py-3 text-sm font-medium transition-colors ${
+                    transparent
+                      ? "text-white/90 hover:text-white"
+                      : "text-navy hover:text-coral"
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
                 href="/contact"
-                className="mt-2 rounded-lg bg-teal px-5 py-2.5 text-center text-sm font-semibold text-white"
+                className="mt-3 rounded bg-coral px-5 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white hover:bg-coral-hover transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
-                Book a Demo
+                Get Started
               </Link>
             </div>
           </nav>

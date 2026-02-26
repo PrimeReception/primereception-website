@@ -49,18 +49,18 @@ export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="mx-auto max-w-3xl divide-y divide-gray-200">
+    <div className="mx-auto max-w-3xl divide-y divide-navy/10">
       {faqs.map((faq, i) => (
         <div key={i}>
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
             className="flex w-full items-center justify-between py-5 text-left group"
           >
-            <span className="text-base font-medium text-charcoal pr-4 group-hover:text-teal transition-colors">
+            <span className="text-base font-medium text-navy pr-4 group-hover:text-coral transition-colors">
               {faq.question}
             </span>
             <svg
-              className={`h-5 w-5 shrink-0 text-teal transition-transform duration-200 ${
+              className={`h-5 w-5 shrink-0 text-coral transition-transform duration-200 ${
                 openIndex === i ? "rotate-180" : ""
               }`}
               fill="none"
@@ -83,7 +83,7 @@ export default function FAQAccordion() {
             }`}
           >
             <div className="overflow-hidden">
-              <p className="pb-5 text-sm leading-relaxed text-gray-600">
+              <p className="pb-5 text-sm leading-relaxed text-text-body">
                 {faq.answer}
               </p>
             </div>
