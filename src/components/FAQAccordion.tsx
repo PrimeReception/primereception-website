@@ -56,11 +56,11 @@ export default function FAQAccordion() {
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
             className="flex w-full items-center justify-between py-5 text-left group"
           >
-            <span className="text-base font-medium text-navy pr-4 group-hover:text-coral transition-colors">
+            <span className="text-base font-medium text-navy pr-4 group-hover:text-gold transition-colors">
               {faq.question}
             </span>
             <svg
-              className={`h-5 w-5 shrink-0 text-coral transition-transform duration-200 ${
+              className={`h-5 w-5 shrink-0 text-gold transition-transform duration-200 ${
                 openIndex === i ? "rotate-180" : ""
               }`}
               fill="none"

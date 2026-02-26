@@ -3,21 +3,21 @@ import { CONTACT } from "@/lib/contact";
 
 export default function Footer() {
   return (
-    <footer className="bg-ice">
+    <footer className="bg-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Need help? */}
           <div>
             <Link href="/" className="flex items-center gap-2.5 mb-5">
               <img
-                src="/logo.png"
+                src="/icon.png"
                 alt="PrimeReception"
                 width={32}
                 height={32}
                 className="shrink-0 rounded-lg"
               />
               <span className="text-lg font-bold text-navy">
-                Prime<span className="text-coral">Reception</span>
+                Prime<span className="text-gold">Reception</span>
               </span>
             </Link>
             <h4 className="font-serif text-xl font-bold text-navy">
@@ -43,7 +43,7 @@ export default function Footer() {
             </ul>
             <Link
               href="/contact"
-              className="mt-6 inline-block rounded bg-coral px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-coral-hover transition-colors"
+              className="mt-6 inline-block rounded bg-gold px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-burnt transition-colors"
             >
               Get Started
             </Link>

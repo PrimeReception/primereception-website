@@ -1,26 +1,29 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* === New Capsule-inspired palette === */
-  --color-navy: #1B3A5C;
-  --color-navy-deep: #152D4A;
-  --color-coral: #E84E3A;
-  --color-coral-hover: #d4412f;
-  --color-yellow: #F5C518;
-  --color-sage: #7FA897;
-  --color-teal: #5B9EA6;
-  --color-ice: #EFF5F6;
-  --color-cream: #FDFCFA;
-  --color-text-navy: #1B3A5C;
+  /* === Brand palette (logo-derived) === */
+  --color-navy: #1B2D4F;
+  --color-navy-deep: #142240;
+  --color-gold: #D4943A;
+  --color-burnt: #C4632A;
+  --color-rose: #8B6B7B;
+  --color-teal: #4A7B8A;
+  --color-cream: #FDF8F0;
+  --color-text-navy: #1B2D4F;
   --color-text-body: #4A5B6E;
   --color-green: #10B981;
 
   /* === Backward-compat aliases (used by other pages) === */
   --color-navy-light: #1F4470;
-  --color-navy-dark: #152D4A;
-  --color-teal-dark: #4A8B93;
-  --color-charcoal: #1B3A5C;
-  --color-gray-bg: #EFF5F6;
+  --color-navy-dark: #142240;
+  --color-coral: #D4943A;
+  --color-coral-hover: #C4632A;
+  --color-yellow: #D4943A;
+  --color-sage: #8B6B7B;
+  --color-teal-dark: #3D6A77;
+  --color-charcoal: #1B2D4F;
+  --color-ice: #FDF8F0;
+  --color-gray-bg: #FDF8F0;
 
   /* === Fonts === */
   --font-sans: var(--font-inter);
@@ -38,12 +41,12 @@ html {
 }
 
 ::selection {
-  background-color: #E84E3A;
+  background-color: #D4943A;
   color: white;
 }
 
 :focus-visible {
-  outline: 2px solid #5B9EA6;
+  outline: 2px solid #4A7B8A;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -75,47 +78,51 @@ input[type="range"]::-webkit-slider-thumb {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #5B9EA6;
+  background: #4A7B8A;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.15);
-  box-shadow: 0 2px 6px rgba(91,158,166,0.4);
+  box-shadow: 0 2px 6px rgba(74,123,138,0.4);
 }
 input[type="range"]::-moz-range-thumb {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #5B9EA6;
+  background: #4A7B8A;
   cursor: pointer;
   border: none;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 /* ============================================
-   HERO BLOB ANIMATIONS
+   HERO GEOMETRIC ANIMATIONS
    ============================================ */
-@keyframes blob-float-1 {
+@keyframes geo-float-1 {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(30px, -20px) rotate(10deg); }
-  66% { transform: translate(-15px, 15px) rotate(-5deg); }
+  33% { transform: translate(20px, -15px) rotate(8deg); }
+  66% { transform: translate(-10px, 10px) rotate(-4deg); }
 }
-@keyframes blob-float-2 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(-25px, 15px) rotate(-8deg); }
-  66% { transform: translate(20px, -25px) rotate(12deg); }
+@keyframes geo-float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(45deg); }
+  33% { transform: translate(-18px, 12px) rotate(38deg); }
+  66% { transform: translate(14px, -18px) rotate(52deg); }
 }
-@keyframes blob-float-3 {
+@keyframes geo-float-3 {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(15px, 20px) rotate(6deg); }
-  66% { transform: translate(-20px, -10px) rotate(-10deg); }
+  33% { transform: translate(12px, 16px) rotate(5deg); }
+  66% { transform: translate(-16px, -8px) rotate(-6deg); }
 }
-@keyframes blob-float-4 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(-20px, -15px) rotate(-12deg); }
-  66% { transform: translate(25px, 10px) rotate(8deg); }
+@keyframes geo-float-4 {
+  0%, 100% { transform: translate(0, 0) rotate(22deg); }
+  33% { transform: translate(-14px, -10px) rotate(15deg); }
+  66% { transform: translate(18px, 8px) rotate(30deg); }
+}
+@keyframes starburst-rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* ============================================

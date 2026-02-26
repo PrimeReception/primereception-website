@@ -54,10 +54,10 @@ export default function Header() {
           {/* Centered logo */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5">
             <img
-              src="/logo.png"
+              src="/icon.png"
               alt="PrimeReception"
-              width={36}
-              height={36}
+              width={32}
+              height={32}
               className="shrink-0 rounded-lg"
             />
             <span
@@ -65,14 +65,14 @@ export default function Header() {
                 transparent ? "text-white" : "text-navy"
               }`}
             >
-              Prime<span className="text-coral">Reception</span>
+              Prime<span className="text-gold">Reception</span>
             </span>
           </Link>
 
           {/* Right — GET STARTED */}
           <Link
             href="/contact"
-            className="hidden sm:inline-block rounded bg-coral px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-coral-hover transition-colors"
+            className="hidden sm:inline-block rounded bg-gold px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-burnt transition-colors"
           >
             Get Started
           </Link>
@@ -100,7 +100,7 @@ export default function Header() {
                   className={`px-2 py-3 text-sm font-medium transition-colors ${
                     transparent
                       ? "text-white/90 hover:text-white"
-                      : "text-navy hover:text-coral"
+                      : "text-navy hover:text-gold"
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -109,7 +109,7 @@ export default function Header() {
               ))}
               <Link
                 href="/contact"
-                className="mt-3 rounded bg-coral px-5 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white hover:bg-coral-hover transition-colors"
+                className="mt-3 rounded bg-gold px-5 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white hover:bg-burnt transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Started

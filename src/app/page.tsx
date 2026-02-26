@@ -9,41 +9,89 @@ export default function Home() {
     <main>
       {/* ====== 1. HERO ====== */}
       <section className="relative bg-navy overflow-hidden min-h-[92vh] flex items-center">
-        {/* Animated organic blobs */}
-        {/* Yellow pill */}
+        {/* Geometric starburst shapes — logo-inspired */}
+
+        {/* Large starburst rays (top-right) — thin lines radiating from a point */}
         <div
-          className="absolute top-[12%] right-[8%] w-44 h-24 rounded-[50px] bg-yellow opacity-80"
-          style={{ animation: "blob-float-1 18s ease-in-out infinite" }}
-        />
-        {/* Coral triangle-ish */}
+          className="absolute top-[15%] right-[12%]"
+          style={{ animation: "starburst-rotate 90s linear infinite" }}
+        >
+          {[0, 45, 90, 135].map((deg) => (
+            <div
+              key={deg}
+              className="absolute top-1/2 left-1/2 w-[2px] h-28 bg-gold origin-bottom"
+              style={{
+                transform: `translate(-50%, -100%) rotate(${deg}deg)`,
+                opacity: 0.18,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Diamond / compass point — top right area */}
         <div
-          className="absolute bottom-[18%] right-[22%] w-0 h-0"
+          className="absolute top-[22%] right-[28%] w-10 h-10 bg-gold"
           style={{
-            borderLeft: "50px solid transparent",
-            borderRight: "50px solid transparent",
-            borderBottom: "90px solid #E84E3A",
-            opacity: 0.75,
-            animation: "blob-float-2 22s ease-in-out infinite",
+            transform: "rotate(45deg)",
+            opacity: 0.2,
+            animation: "geo-float-1 18s ease-in-out infinite",
           }}
         />
-        {/* Sage circle */}
+
+        {/* Small diamond — mid right */}
         <div
-          className="absolute top-[38%] right-[4%] w-32 h-32 rounded-full bg-sage opacity-70"
-          style={{ animation: "blob-float-3 16s ease-in-out infinite" }}
-        />
-        {/* Mauve blob */}
-        <div
-          className="absolute bottom-[10%] right-[42%] w-28 h-28 bg-[#C4A0D4] opacity-50"
+          className="absolute top-[50%] right-[6%] w-6 h-6 bg-burnt"
           style={{
-            borderRadius: "60% 40% 50% 70% / 50% 60% 40% 55%",
-            animation: "blob-float-4 20s ease-in-out infinite",
+            transform: "rotate(45deg)",
+            opacity: 0.15,
+            animation: "geo-float-2 22s ease-in-out infinite",
           }}
         />
-        {/* Small yellow circle */}
+
+        {/* Starburst rays cluster (bottom-right) */}
         <div
-          className="absolute top-[60%] right-[55%] w-14 h-14 rounded-full bg-yellow opacity-40"
-          style={{ animation: "blob-float-2 14s ease-in-out infinite" }}
+          className="absolute bottom-[20%] right-[18%]"
+          style={{ animation: "starburst-rotate 120s linear infinite" }}
+        >
+          {[0, 60, 120].map((deg) => (
+            <div
+              key={deg}
+              className="absolute top-1/2 left-1/2 w-[1.5px] h-20 bg-burnt origin-bottom"
+              style={{
+                transform: `translate(-50%, -100%) rotate(${deg}deg)`,
+                opacity: 0.15,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Diamond — lower center-right */}
+        <div
+          className="absolute bottom-[12%] right-[40%] w-8 h-8 bg-gold"
+          style={{
+            transform: "rotate(45deg)",
+            opacity: 0.15,
+            animation: "geo-float-3 16s ease-in-out infinite",
+          }}
         />
+
+        {/* Tiny diamond accent — upper left */}
+        <div
+          className="absolute top-[30%] right-[52%] w-4 h-4 bg-gold"
+          style={{
+            transform: "rotate(45deg)",
+            opacity: 0.12,
+            animation: "geo-float-4 20s ease-in-out infinite",
+          }}
+        />
+
+        {/* Subtle compass cross — far right */}
+        <div className="absolute top-[40%] right-[2%] opacity-10">
+          <div className="w-[2px] h-16 bg-gold mx-auto" />
+          <div
+            className="w-16 h-[2px] bg-gold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          />
+        </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 md:py-40">
           <div className="max-w-2xl">
@@ -57,7 +105,7 @@ export default function Home() {
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-block rounded bg-coral px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white hover:bg-coral-hover transition-colors"
+                className="inline-block rounded bg-gold px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white hover:bg-burnt transition-colors"
               >
                 Get Started
               </Link>
@@ -90,11 +138,11 @@ export default function Home() {
                 <input
                   type="text"
                   placeholder="Enter your zip code"
-                  className="w-full max-w-xs rounded-lg border border-navy/15 bg-ice px-5 py-3.5 text-sm text-navy placeholder:text-text-body/50 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+                  className="w-full max-w-xs rounded-lg border border-navy/15 bg-cream px-5 py-3.5 text-sm text-navy placeholder:text-text-body/50 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
                 />
                 <Link
                   href="/contact"
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-coral text-white hover:bg-coral-hover transition-colors"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gold text-white hover:bg-burnt transition-colors"
                   aria-label="Check availability"
                 >
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +157,7 @@ export default function Home() {
 
       {/* ====== 3. EXPERIENCE SECTION ====== */}
       <ScrollReveal>
-        <section className="bg-ice py-20 md:py-28">
+        <section className="bg-cream py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-3xl font-bold text-navy text-center sm:text-4xl lg:text-5xl">
               Experience a better reception
@@ -122,7 +170,7 @@ export default function Home() {
             <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
               {/* Card 1 */}
               <div className="text-center">
-                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-yellow/20">
+                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-gold/15">
                   <span className="text-6xl">&#128222;</span>
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-bold text-navy">
@@ -136,7 +184,7 @@ export default function Home() {
 
               {/* Card 2 */}
               <div className="text-center">
-                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-teal/20">
+                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-teal/15">
                   <span className="text-6xl">&#128203;</span>
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-bold text-navy">
@@ -150,7 +198,7 @@ export default function Home() {
 
               {/* Card 3 */}
               <div className="text-center">
-                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-coral/15">
+                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-burnt/12">
                   <span className="text-6xl">&#128200;</span>
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-bold text-navy">
@@ -176,7 +224,7 @@ export default function Home() {
               </h2>
               <Link
                 href="/how-it-works"
-                className="text-xs font-semibold uppercase tracking-widest text-coral hover:text-coral-hover transition-colors"
+                className="text-xs font-semibold uppercase tracking-widest text-gold hover:text-burnt transition-colors"
               >
                 Learn More &rarr;
               </Link>
@@ -261,7 +309,7 @@ export default function Home() {
               <span className="text-3xl font-bold text-navy/30 select-none">=</span>
 
               {/* Result */}
-              <div className="rounded-2xl border-2 border-coral/30 bg-coral/5 px-8 py-6 text-center max-w-sm w-full">
+              <div className="rounded-2xl border-2 border-gold/30 bg-gold/5 px-8 py-6 text-center max-w-sm w-full">
                 <p className="font-serif text-lg font-bold text-navy">
                   A front desk your patients will love, at a fraction of the cost
                 </p>
@@ -283,12 +331,12 @@ export default function Home() {
               <div className="mt-8 flex flex-col items-center">
                 <p className="text-7xl font-bold text-navy sm:text-8xl">98%</p>
                 <p className="mt-2 text-sm text-text-body">satisfaction rate</p>
-                {/* 5 yellow stars */}
+                {/* 5 gold stars */}
                 <div className="mt-4 flex gap-1">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className="h-7 w-7 text-yellow"
+                      className="h-7 w-7 text-gold"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -306,10 +354,10 @@ export default function Home() {
 
       {/* ====== 7. PRESS / SOCIAL PROOF ====== */}
       <ScrollReveal>
-        <section className="relative bg-ice py-20 md:py-28 overflow-hidden">
-          {/* Yellow blob behind the quote */}
+        <section className="relative bg-cream py-20 md:py-28 overflow-hidden">
+          {/* Warm gold glow behind the quote */}
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow/15 blur-3xl"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl"
             aria-hidden="true"
           />
 
@@ -358,7 +406,7 @@ export default function Home() {
             <div className="mt-10 text-center">
               <Link
                 href="/contact"
-                className="text-xs font-semibold uppercase tracking-widest text-coral hover:text-coral-hover transition-colors"
+                className="text-xs font-semibold uppercase tracking-widest text-gold hover:text-burnt transition-colors"
               >
                 See More Questions &rarr;
               </Link>
