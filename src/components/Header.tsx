@@ -56,9 +56,9 @@ export default function Header() {
             <img
               src="/icon.png"
               alt="PrimeReception"
-              width={32}
-              height={32}
-              className="shrink-0 rounded-lg"
+              width={44}
+              height={44}
+              className="shrink-0 rounded-xl"
             />
             <span
               className={`text-xl font-bold transition-colors ${
