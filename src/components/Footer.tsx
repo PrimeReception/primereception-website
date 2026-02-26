@@ -8,6 +8,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Need help? */}
           <div>
+            <Link href="/" className="flex items-center gap-2.5 mb-5">
+              <img
+                src="/logo.png"
+                alt="PrimeReception"
+                width={32}
+                height={32}
+                className="shrink-0 rounded-lg"
+              />
+              <span className="text-lg font-bold text-navy">
+                Prime<span className="text-coral">Reception</span>
+              </span>
+            </Link>
             <h4 className="font-serif text-xl font-bold text-navy">
               Need help?
             </h4>

@@ -52,13 +52,13 @@ export default function Header() {
           </button>
 
           {/* Centered logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5">
             <img
-              src={transparent ? "/icon-light.svg" : "/icon.svg"}
-              alt=""
-              width={32}
-              height={32}
-              className="shrink-0"
+              src="/logo.png"
+              alt="PrimeReception"
+              width={36}
+              height={36}
+              className="shrink-0 rounded-lg"
             />
             <span
               className={`text-xl font-bold transition-colors ${
