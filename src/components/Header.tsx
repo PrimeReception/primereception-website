@@ -33,7 +33,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex min-h-[80px] items-center justify-between">
+        <div className="flex h-[72px] items-center justify-between">
           {/* Hamburger — left */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -51,21 +51,15 @@ export default function Header() {
             </svg>
           </button>
 
-          {/* Centered logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex flex-row items-center gap-3">
+          {/* Centered logo — single image, no separate text */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2">
             <img
-              src="/icon.png"
-              alt=""
-              style={{ width: 40, height: 40 }}
-              className="block rounded-lg object-contain"
-            />
-            <span
-              className={`whitespace-nowrap text-xl font-bold leading-none transition-colors ${
-                transparent ? "text-white" : "text-navy"
+              src="/logo-full.png"
+              alt="PrimeReception"
+              className={`h-[44px] w-auto object-contain transition-all duration-300 ${
+                transparent ? "brightness-0 invert" : ""
               }`}
-            >
-              Prime<span className="text-gold">Reception</span>
-            </span>
+            />
           </Link>
 
           {/* Right — GET STARTED */}
