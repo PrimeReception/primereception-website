@@ -54,7 +54,7 @@ export default function Header() {
           {/* Centered logo — single image, no separate text */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2">
             <img
-              src="/logo-final.png"
+              src={transparent ? "/logo-white.png" : "/logo-dark.png"}
               alt="PrimeReception"
               className="h-[52px] w-auto object-contain"
             />

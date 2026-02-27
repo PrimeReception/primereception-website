@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="mb-5 inline-block">
               <img
-                src="/logo-final.png"
+                src="/logo-dark.png"
                 alt="PrimeReception"
                 className="h-[40px] w-auto object-contain"
               />
