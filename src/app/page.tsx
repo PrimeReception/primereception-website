@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CONTACT } from "@/lib/contact";
 import FAQAccordion from "@/components/FAQAccordion";
 import HeroHeading from "@/components/HeroHeading";
+import ShootingArrows from "@/components/ShootingArrows";
 import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 
@@ -10,89 +11,8 @@ export default function Home() {
     <main>
       {/* ====== 1. HERO ====== */}
       <section className="relative bg-navy overflow-hidden min-h-[92vh] flex items-center">
-        {/* Geometric starburst shapes — logo-inspired */}
-
-        {/* Large starburst rays (top-right) — thin lines radiating from a point */}
-        <div
-          className="absolute top-[15%] right-[12%]"
-          style={{ animation: "starburst-rotate 90s linear infinite" }}
-        >
-          {[0, 45, 90, 135].map((deg) => (
-            <div
-              key={deg}
-              className="absolute top-1/2 left-1/2 w-[2px] h-28 bg-gold origin-bottom"
-              style={{
-                transform: `translate(-50%, -100%) rotate(${deg}deg)`,
-                opacity: 0.18,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Diamond / compass point — top right area */}
-        <div
-          className="absolute top-[22%] right-[28%] w-10 h-10 bg-gold"
-          style={{
-            transform: "rotate(45deg)",
-            opacity: 0.2,
-            animation: "geo-float-1 18s ease-in-out infinite",
-          }}
-        />
-
-        {/* Small diamond — mid right */}
-        <div
-          className="absolute top-[50%] right-[6%] w-6 h-6 bg-burnt"
-          style={{
-            transform: "rotate(45deg)",
-            opacity: 0.15,
-            animation: "geo-float-2 22s ease-in-out infinite",
-          }}
-        />
-
-        {/* Starburst rays cluster (bottom-right) */}
-        <div
-          className="absolute bottom-[20%] right-[18%]"
-          style={{ animation: "starburst-rotate 120s linear infinite" }}
-        >
-          {[0, 60, 120].map((deg) => (
-            <div
-              key={deg}
-              className="absolute top-1/2 left-1/2 w-[1.5px] h-20 bg-burnt origin-bottom"
-              style={{
-                transform: `translate(-50%, -100%) rotate(${deg}deg)`,
-                opacity: 0.15,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Diamond — lower center-right */}
-        <div
-          className="absolute bottom-[12%] right-[40%] w-8 h-8 bg-gold"
-          style={{
-            transform: "rotate(45deg)",
-            opacity: 0.15,
-            animation: "geo-float-3 16s ease-in-out infinite",
-          }}
-        />
-
-        {/* Tiny diamond accent — upper left */}
-        <div
-          className="absolute top-[30%] right-[52%] w-4 h-4 bg-gold"
-          style={{
-            transform: "rotate(45deg)",
-            opacity: 0.12,
-            animation: "geo-float-4 20s ease-in-out infinite",
-          }}
-        />
-
-        {/* Subtle compass cross — far right */}
-        <div className="absolute top-[40%] right-[2%] opacity-10">
-          <div className="w-[2px] h-16 bg-gold mx-auto" />
-          <div
-            className="w-16 h-[2px] bg-gold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          />
-        </div>
+        {/* Shooting arrows background */}
+        <ShootingArrows />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 md:py-40">
           <div className="max-w-2xl">

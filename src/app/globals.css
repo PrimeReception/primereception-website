@@ -98,34 +98,6 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* ============================================
-   HERO GEOMETRIC ANIMATIONS
-   ============================================ */
-@keyframes geo-float-1 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(20px, -15px) rotate(8deg); }
-  66% { transform: translate(-10px, 10px) rotate(-4deg); }
-}
-@keyframes geo-float-2 {
-  0%, 100% { transform: translate(0, 0) rotate(45deg); }
-  33% { transform: translate(-18px, 12px) rotate(38deg); }
-  66% { transform: translate(14px, -18px) rotate(52deg); }
-}
-@keyframes geo-float-3 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(12px, 16px) rotate(5deg); }
-  66% { transform: translate(-16px, -8px) rotate(-6deg); }
-}
-@keyframes geo-float-4 {
-  0%, 100% { transform: translate(0, 0) rotate(22deg); }
-  33% { transform: translate(-14px, -10px) rotate(15deg); }
-  66% { transform: translate(18px, 8px) rotate(30deg); }
-}
-@keyframes starburst-rotate {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* ============================================
    HERO TEXT ANIMATION
    ============================================ */
 @keyframes hero-drop {
