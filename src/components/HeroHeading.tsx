@@ -5,6 +5,11 @@ import { useState, useEffect } from "react";
 const WORDS = ["Work", "Chat", "Life"];
 const FINAL = "Calls";
 
+// Enter: explosive launch then smooth deceleration with overshoot
+const ENTER = "0.4s cubic-bezier(0.22, 1.4, 0.36, 1)";
+// Exit: slow start then WHOOSH yanked away
+const EXIT = "0.35s cubic-bezier(0.7, 0, 0.84, 0)";
+
 export default function HeroHeading() {
   const [step, setStep] = useState(-1);
 
@@ -29,39 +34,43 @@ export default function HeroHeading() {
     >
       <span
         className="inline-block relative align-baseline"
-        style={{ clipPath: "inset(-0.05em -0.1em -0.05em -0.05em)" }}
+        style={{ clipPath: "inset(-0.1em -0.5em -0.1em -0.15em)" }}
       >
-        {/* Invisible sizer — keeps container width stable */}
+        {/* Invisible sizer — bold "Calls" sets container width */}
         <span className="invisible" aria-hidden="true">
           {FINAL}
         </span>
 
-        {/* Sliding words: Work → Chat → Life (grey placeholders) */}
+        {/* Sliding words: Work → Chat → Life */}
         {WORDS.map((word, i) => {
           const style: React.CSSProperties = {};
 
           if (step < i) {
             // Waiting off-screen left
-            style.transform = "translateX(-110%)";
+            style.transform =
+              "translateX(-110%) scaleX(1) scaleY(1) skewX(0deg)";
           } else if (step === i) {
-            // Slide into view
-            style.transform = "translateX(0) scaleY(1)";
-            style.transition = "transform 0.5s ease-out";
+            // Entering — rockets in, tiny overshoot, settles
+            style.transform =
+              "translateX(0) scaleX(1) scaleY(1) skewX(0deg)";
+            style.transition = `transform ${ENTER}`;
           } else if (i === 2 && step === 3) {
             // Life gets crushed by Calls
-            style.transform = "translateX(0) scaleY(0)";
+            style.transform =
+              "translateX(0) scaleX(1) scaleY(0) skewX(0deg)";
             style.transformOrigin = "bottom";
             style.transition = "transform 0.4s ease-in";
           } else {
-            // Exited right
-            style.transform = "translateX(110%)";
-            style.transition = "transform 0.4s ease-in";
+            // Exiting — yanked away with stretch + lean
+            style.transform =
+              "translateX(110%) scaleX(1.15) scaleY(1) skewX(-3deg)";
+            style.transition = `transform ${EXIT}`;
           }
 
           return (
             <span
               key={word}
-              className="absolute inset-0 text-white/40"
+              className="absolute inset-0 text-white/40 font-normal"
               style={style}
             >
               {word}
@@ -69,7 +78,7 @@ export default function HeroHeading() {
           );
         })}
 
-        {/* Calls — drops from above with bounce (full white) */}
+        {/* Calls — drops from above with bounce (full white, bold) */}
         <span
           className="absolute inset-0"
           style={
