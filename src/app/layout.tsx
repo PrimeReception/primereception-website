@@ -54,8 +54,8 @@ export const metadata: Metadata = {
       "Stop losing customers to missed calls. PrimeReception answers every call 24/7 with natural AI. Plans from $249/month.",
   },
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/icon-final.png",
+    apple: "/icon-final.png",
   },
   robots: {
     index: true,
