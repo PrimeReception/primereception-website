@@ -140,11 +140,10 @@ export default function HeroHeading() {
           {/* Calls — drops from above with bounce (warm pastel yellow, bold) */}
           <span
             className="absolute inset-0 text-right"
-            style={{ color: "#FDE68A" }}
             style={
               step < 2
-                ? { transform: "translateY(-150%)", opacity: 0 }
-                : { animation: "hero-drop 0.8s linear forwards" }
+                ? { color: "#FDE68A", transform: "translateY(-150%)", opacity: 0 }
+                : { color: "#FDE68A", animation: "hero-drop 0.8s linear forwards" }
             }
           >
             {FINAL}
