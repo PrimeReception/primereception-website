@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const WORDS = ["Work", "Chat", "Life"];
+const WORDS = ["Life", "Chat", "Work"];
 const FINAL = "Calls";
 const ALL = [...WORDS, FINAL];
 
@@ -36,7 +36,7 @@ export default function HeroHeading() {
       const mw = Math.ceil(max) + 2;
       setMaxWidth(mw);
       // "a" position = right-align offset of "Calls" + width of "C"
-      setEasyIndent(mw - callsW + cW);
+      setEasyIndent((mw - callsW + cW) * 0.65);
     };
     measure();
     window.addEventListener("resize", measure);
