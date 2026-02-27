@@ -7,7 +7,6 @@ import NetworkGraph from "@/components/NetworkGraph";
 import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import ElevenLabsWidget from "@/components/ElevenLabsWidget";
-import TryInBrowserBtn from "@/components/TryInBrowserBtn";
 
 export default function Home() {
   return (
@@ -56,22 +55,27 @@ export default function Home() {
       </section>
 
       {/* ====== LIVE DEMO BANNER ====== */}
-      <section className="bg-teal/10 py-10 md:py-12">
+      <section className="bg-teal/10 py-10 md:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="font-serif text-xl font-bold text-navy sm:text-2xl">
-            Hear it for yourself — call our AI receptionist live
+            Hear it for yourself — try our AI receptionist live
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <p className="mt-2 text-sm text-text-body">
+            Talk to our AI right here in your browser, or call it on your phone.
+          </p>
+          <div className="mt-8 mx-auto max-w-md">
+            <ElevenLabsWidget />
+          </div>
+          <div className="mt-6">
             <a
               href="tel:+14247885134"
-              className="inline-flex items-center gap-2 rounded bg-teal px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white hover:bg-green transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-teal hover:text-green transition-colors"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call (424) 788-5134
+              Or call (424) 788-5134 on your phone
             </a>
-            <TryInBrowserBtn />
           </div>
         </div>
       </section>
@@ -356,9 +360,6 @@ export default function Home() {
           </div>
         </section>
       </ScrollReveal>
-
-      {/* ElevenLabs floating demo widget */}
-      <ElevenLabsWidget />
     </main>
   );
 }
