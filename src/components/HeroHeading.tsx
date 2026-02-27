@@ -129,7 +129,7 @@ export default function HeroHeading() {
             return (
               <span
                 key={word}
-                className="absolute inset-0 text-right text-white/40 font-normal"
+                className="absolute inset-0 text-right text-white/25 font-normal"
                 style={style}
               >
                 {word}
@@ -137,9 +137,10 @@ export default function HeroHeading() {
             );
           })}
 
-          {/* Calls — drops from above with bounce (full white, bold) */}
+          {/* Calls — drops from above with bounce (warm pastel yellow, bold) */}
           <span
             className="absolute inset-0 text-right"
+            style={{ color: "#FDE68A" }}
             style={
               step < 2
                 ? { transform: "translateY(-150%)", opacity: 0 }
