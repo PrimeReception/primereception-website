@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CONTACT } from "@/lib/contact";
 import FAQAccordion from "@/components/FAQAccordion";
+import HeroHeading from "@/components/HeroHeading";
 import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 
@@ -95,9 +96,7 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 md:py-40">
           <div className="max-w-2xl">
-            <h1 className="font-serif text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.1]">
-              Calls made<br />easy.
-            </h1>
+            <HeroHeading />
             <p className="mt-6 text-lg text-white/75 leading-relaxed max-w-lg sm:text-xl">
               PrimeReception answers every call with natural AI — so you never
               miss a patient, client, or customer again.
