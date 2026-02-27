@@ -27,13 +27,16 @@ export default function HeroHeading() {
           : undefined
       }
     >
-      <span className="inline-block relative overflow-hidden">
+      <span
+        className="inline-block relative align-baseline"
+        style={{ clipPath: "inset(-0.05em -0.1em -0.05em -0.05em)" }}
+      >
         {/* Invisible sizer — keeps container width stable */}
         <span className="invisible" aria-hidden="true">
           {FINAL}
         </span>
 
-        {/* Sliding words: Work → Chat → Life */}
+        {/* Sliding words: Work → Chat → Life (grey placeholders) */}
         {WORDS.map((word, i) => {
           const style: React.CSSProperties = {};
 
@@ -56,13 +59,17 @@ export default function HeroHeading() {
           }
 
           return (
-            <span key={word} className="absolute inset-0" style={style}>
+            <span
+              key={word}
+              className="absolute inset-0 text-white/40"
+              style={style}
+            >
               {word}
             </span>
           );
         })}
 
-        {/* Calls — drops from above with bounce */}
+        {/* Calls — drops from above with bounce (full white) */}
         <span
           className="absolute inset-0"
           style={
