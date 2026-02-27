@@ -80,6 +80,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ====== WHY IT WORKS ====== */}
+      <ScrollReveal>
+        <section className="bg-cream py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center mb-16">
+              <h2 className="font-serif text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
+                Feels like your best employee answering every call
+              </h2>
+              <p className="mt-4 text-text-body">
+                Not a generic chatbot. A custom AI receptionist trained on your business.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+              {/* Trained on you */}
+              <div className="text-center">
+                <svg className="mx-auto h-12 w-12 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.3} d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                </svg>
+                <h3 className="mt-5 font-serif text-xl font-bold text-navy">
+                  Trained on you
+                </h3>
+                <p className="mt-3 text-sm text-text-body leading-relaxed max-w-xs mx-auto">
+                  Your AI receptionist learns your services, hours, providers, insurance, and FAQs. It sounds like someone who&apos;s worked at your front desk for years.
+                </p>
+              </div>
+
+              {/* Built with guardrails */}
+              <div className="text-center">
+                <svg className="mx-auto h-12 w-12 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.3} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+                <h3 className="mt-5 font-serif text-xl font-bold text-navy">
+                  Built with guardrails
+                </h3>
+                <p className="mt-3 text-sm text-text-body leading-relaxed max-w-xs mx-auto">
+                  Strict boundaries ensure your AI never guesses, never improvises medical advice, and always escalates when a real human is needed.
+                </p>
+              </div>
+
+              {/* All-in-one front desk */}
+              <div className="text-center">
+                <svg className="mx-auto h-12 w-12 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.3} d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
+                </svg>
+                <h3 className="mt-5 font-serif text-xl font-bold text-navy">
+                  All-in-one front desk
+                </h3>
+                <p className="mt-3 text-sm text-text-body leading-relaxed max-w-xs mx-auto">
+                  Answers calls, books appointments, captures leads, handles FAQs, takes messages, and routes urgent calls — all from one number.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* ====== 2. PRICING ====== */}
       <ScrollReveal>
         <section className="bg-white py-20 md:py-28">
