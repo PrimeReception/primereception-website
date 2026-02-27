@@ -74,11 +74,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <script
-          src="https://unpkg.com/@elevenlabs/convai-widget-embed"
-          async
-          type="text/javascript"
-        />
       </body>
     </html>
   );
