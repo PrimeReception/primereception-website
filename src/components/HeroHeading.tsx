@@ -8,7 +8,8 @@ const FINAL = "Calls";
 // Enter: explosive launch then smooth deceleration with overshoot
 const ENTER = "0.4s cubic-bezier(0.22, 1.4, 0.36, 1)";
 // Exit: slow start then WHOOSH yanked away
-const EXIT = "0.35s cubic-bezier(0.7, 0, 0.84, 0)";
+const EXIT_DUR = "0.35s";
+const EXIT_EASE = "cubic-bezier(0.7, 0, 0.84, 0)";
 
 export default function HeroHeading() {
   const [step, setStep] = useState(-1);
@@ -32,13 +33,11 @@ export default function HeroHeading() {
           : undefined
       }
     >
-      <span
-        className="inline-block relative align-baseline"
-        style={{ clipPath: "inset(-0.1em -0.5em -0.1em -0.15em)" }}
-      >
-        {/* Invisible sizer — bold "Calls" sets container width */}
+      <span className="inline-block relative align-baseline overflow-hidden">
+        {/* Invisible sizer — bold "Calls" + buffer for wider words */}
         <span className="invisible" aria-hidden="true">
           {FINAL}
+          <span className="inline-block" style={{ width: "0.3em" }} />
         </span>
 
         {/* Sliding words: Work → Chat → Life */}
@@ -60,11 +59,18 @@ export default function HeroHeading() {
               "translateX(0) scaleX(1) scaleY(0) skewX(0deg)";
             style.transformOrigin = "bottom";
             style.transition = "transform 0.4s ease-in";
-          } else {
-            // Exiting — yanked away with stretch + lean
+          } else if (step === i + 1) {
+            // Actively exiting — yanked away with stretch + lean
             style.transform =
-              "translateX(110%) scaleX(1.15) scaleY(1) skewX(-3deg)";
-            style.transition = `transform ${EXIT}`;
+              "translateX(200%) scaleX(1.15) scaleY(1) skewX(-3deg)";
+            style.opacity = 0;
+            style.transition = `transform ${EXIT_DUR} ${EXIT_EASE}, opacity 0.05s linear 0.3s`;
+          } else {
+            // Fully exited — nuke it
+            style.transform =
+              "translateX(200%) scaleX(1.15) scaleY(1) skewX(-3deg)";
+            style.visibility = "hidden";
+            style.opacity = 0;
           }
 
           return (
