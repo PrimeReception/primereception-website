@@ -6,6 +6,7 @@ import FloatingParticles from "@/components/FloatingParticles";
 import NetworkGraph from "@/components/NetworkGraph";
 import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import ElevenLabsWidget from "@/components/ElevenLabsWidget";
 
 export default function Home() {
   return (
@@ -69,16 +70,9 @@ export default function Home() {
               </svg>
               Call (424) 788-5134
             </a>
-            <button
-              id="demo-widget-btn"
-              type="button"
-              className="inline-flex items-center gap-2 rounded border-2 border-teal px-6 py-[10px] text-sm font-semibold uppercase tracking-widest text-teal hover:bg-teal hover:text-white transition-colors"
-            >
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
-              Try in Browser
-            </button>
+            <span className="text-sm text-navy/60">
+              or click the chat bubble to try in your browser
+            </span>
           </div>
         </div>
       </section>
@@ -374,6 +368,9 @@ export default function Home() {
           </div>
         </section>
       </ScrollReveal>
+
+      {/* ElevenLabs floating demo widget */}
+      <ElevenLabsWidget />
     </main>
   );
 }
