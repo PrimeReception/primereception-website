@@ -23,13 +23,22 @@ export default function Home() {
               PrimeReception answers every call with natural AI — so you never
               miss a patient, client, or customer again.
             </p>
-            <div className="mt-10">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
                 className="inline-block rounded bg-teal px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white hover:bg-green transition-colors"
               >
                 Get Started
               </Link>
+              <a
+                href="tel:+14247885134"
+                className="inline-flex items-center gap-2 rounded border-2 border-teal px-8 py-[14px] text-sm font-semibold uppercase tracking-widest text-teal hover:bg-teal hover:text-white transition-colors"
+              >
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Try a Live Demo
+              </a>
             </div>
             <p className="mt-6 text-sm text-white/50">
               Questions? Call{" "}
@@ -40,6 +49,36 @@ export default function Home() {
                 {CONTACT.phoneDisplay}
               </a>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== LIVE DEMO BANNER ====== */}
+      <section className="bg-teal/10 py-10 md:py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <p className="font-serif text-xl font-bold text-navy sm:text-2xl">
+            Hear it for yourself — call our AI receptionist live
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="tel:+14247885134"
+              className="inline-flex items-center gap-2 rounded bg-teal px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white hover:bg-green transition-colors"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Call (424) 788-5134
+            </a>
+            <button
+              id="demo-widget-btn"
+              type="button"
+              className="inline-flex items-center gap-2 rounded border-2 border-teal px-6 py-[10px] text-sm font-semibold uppercase tracking-widest text-teal hover:bg-teal hover:text-white transition-colors"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              Try in Browser
+            </button>
           </div>
         </div>
       </section>
