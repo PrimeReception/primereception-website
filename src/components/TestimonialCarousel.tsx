@@ -5,7 +5,7 @@ import { useRef } from "react";
 const testimonials = [
   {
     quote:
-      "PrimeReception has been a game-changer for our practice. We're capturing 40% more appointment requests than before.",
+      "Prime Reception has been a game-changer for our practice. We're capturing 40% more appointment requests than before.",
     author: "Dr. Sarah K.",
     role: "Smile Dental Care",
   },

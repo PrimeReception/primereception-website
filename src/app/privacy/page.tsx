@@ -5,7 +5,7 @@ import { CONTACT } from "@/lib/contact";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "PrimeReception's privacy policy. Learn how we collect, use, and protect your information.",
+    "Prime Reception's privacy policy. Learn how we collect, use, and protect your information.",
 };
 
 export default function Privacy() {
@@ -32,7 +32,7 @@ export default function Privacy() {
                 1. Introduction
               </h2>
               <p>
-                PrimeReception (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+                Prime Reception (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
                 &ldquo;our&rdquo;) provides AI-powered phone answering services
                 for businesses. This Privacy Policy explains how we collect,
                 use, disclose, and safeguard information when you visit our
@@ -145,7 +145,7 @@ export default function Privacy() {
                 6. Sensitive Information &amp; Healthcare Data
               </h2>
               <p>
-                PrimeReception is designed to minimize the collection of
+                Prime Reception is designed to minimize the collection of
                 sensitive information during calls. If your business handles
                 protected health information (PHI) or other regulated data, we
                 configure call handling to limit what is captured and route

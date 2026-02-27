@@ -5,7 +5,7 @@ import { CONTACT } from "@/lib/contact";
 export const metadata: Metadata = {
   title: "Industries We Serve — AI Receptionist for Dental, Med Spa, Auto & More",
   description:
-    "PrimeReception serves dental offices, med spas, auto body shops, law offices, HVAC, and more. See how AI phone answering solves your industry's biggest challenges.",
+    "Prime Reception serves dental offices, med spas, auto body shops, law offices, HVAC, and more. See how AI phone answering solves your industry's biggest challenges.",
 };
 
 const industries = [
@@ -21,7 +21,7 @@ const industries = [
       "Hiring another front desk person costs $30,000-$40,000/year",
     ],
     solution:
-      "PrimeReception answers every call — during procedures, at lunch, after hours, and on weekends. We take messages, answer common questions about services and insurance, and capture new patient leads. Call handling is configured to minimize sensitive information collection and route appropriately.",
+      "Prime Reception answers every call — during procedures, at lunch, after hours, and on weekends. We take messages, answer common questions about services and insurance, and capture new patient leads. Call handling is configured to minimize sensitive information collection and route appropriately.",
     scenario: {
       caller: "New patient calling about teeth whitening pricing",
       ai: "Thanks for calling Bright Smile Dental! I'd be happy to help. Our professional teeth whitening starts at $350 for in-office treatment. Would you like me to schedule a free consultation with Dr. Miller? I have openings this Thursday at 2pm or Friday at 10am.",
@@ -40,7 +40,7 @@ const industries = [
       "Competitors with better phone availability steal your potential clients",
     ],
     solution:
-      "PrimeReception provides the premium experience your clients expect. We answer after-hours inquiries about treatments and pricing, capture booking requests, and make sure every potential client feels valued from the first interaction.",
+      "Prime Reception provides the premium experience your clients expect. We answer after-hours inquiries about treatments and pricing, capture booking requests, and make sure every potential client feels valued from the first interaction.",
     scenario: {
       caller: "Potential client calling at 8pm about Botox pricing",
       ai: "Thank you for calling Glow Aesthetics! Our Botox treatments start at $12 per unit, and most clients use 20-40 units depending on the treatment area. We'd love to schedule a complimentary consultation for you. I have availability tomorrow at 11am or Thursday at 3pm — which works better for you?",
@@ -59,7 +59,7 @@ const industries = [
       "Can't afford a dedicated receptionist just to answer phones",
     ],
     solution:
-      "PrimeReception answers every call while you're working. We take detailed messages about vehicle damage, insurance claims, and estimate requests. Urgent calls get forwarded to you immediately. Everything else becomes a message you can respond to between jobs.",
+      "Prime Reception answers every call while you're working. We take detailed messages about vehicle damage, insurance claims, and estimate requests. Urgent calls get forwarded to you immediately. Everything else becomes a message you can respond to between jobs.",
     scenario: {
       caller: "Customer calling about collision repair estimate",
       ai: "Thanks for calling Elite Auto Body! I'm sorry to hear about the damage. I'd be happy to help get you set up with a free estimate. Could I get your name, the year and model of your vehicle, and a brief description of the damage? We can usually get you in for an estimate within 24-48 hours.",
@@ -78,7 +78,7 @@ const industries = [
       "After-hours calls from potential clients go completely unanswered",
     ],
     solution:
-      "PrimeReception provides professional, dignified call handling befitting a law office. We screen calls, capture case details, determine urgency, and forward truly urgent matters to your cell. New potential clients get a professional first impression 24/7.",
+      "Prime Reception provides professional, dignified call handling befitting a law office. We screen calls, capture case details, determine urgency, and forward truly urgent matters to your cell. New potential clients get a professional first impression 24/7.",
     scenario: {
       caller: "Potential client calling about a personal injury case",
       ai: "Thank you for calling Davidson Law Group. I'm sorry to hear you're dealing with this situation. I'd like to get some details so the attorney can follow up with you personally. Could I get your name and a brief description of what happened? Attorney Davidson typically responds to new inquiries within 2-4 business hours.",
@@ -97,7 +97,7 @@ const industries = [
       "Missing calls during peak season means losing thousands in revenue",
     ],
     solution:
-      "PrimeReception triages every call. Emergency situations get forwarded to your on-call tech immediately. Routine scheduling requests are captured with all the details you need. You focus on the job at hand while we handle the phones.",
+      "Prime Reception triages every call. Emergency situations get forwarded to your on-call tech immediately. Routine scheduling requests are captured with all the details you need. You focus on the job at hand while we handle the phones.",
     scenario: {
       caller: "Homeowner calling with no heat on a cold night",
       ai: "I understand this is urgent — no heat in cold weather is serious. Let me get your information so we can help you as quickly as possible. I'm going to transfer you to our emergency technician right now. Can I get your name and address while I connect you?",
@@ -116,7 +116,7 @@ const industries = [
       "High-value project inquiries deserve an immediate, professional response",
     ],
     solution:
-      "PrimeReception gives your firm a professional front desk presence without the full-time hire. We answer calls with your firm name, take detailed messages about project inquiries, and forward urgent matters — maintaining the polished image your clients expect.",
+      "Prime Reception gives your firm a professional front desk presence without the full-time hire. We answer calls with your firm name, take detailed messages about project inquiries, and forward urgent matters — maintaining the polished image your clients expect.",
     scenario: {
       caller: "Potential client calling about a commercial renovation project",
       ai: "Thank you for calling Cornerstone Architecture. I'd be happy to help connect you with our team about your project. Could I get your name and some details about the renovation? I'll have one of our architects reach out to schedule an initial consultation — typically within one business day.",
@@ -135,7 +135,7 @@ const industries = [
       "After-hours callers with worried pet owners need guidance",
     ],
     solution:
-      "PrimeReception handles routine calls so your staff can focus on animal care. We schedule appointments, answer common questions about services and hours, and immediately forward emergency calls to your on-call vet.",
+      "Prime Reception handles routine calls so your staff can focus on animal care. We schedule appointments, answer common questions about services and hours, and immediately forward emergency calls to your on-call vet.",
     scenario: {
       caller: "Pet owner calling about a dog limping after a walk",
       ai: "I can hear you're concerned about your pup. Based on what you're describing, I'd recommend bringing them in for an exam. We have availability tomorrow at 9am or 2pm. If the limping gets significantly worse or your dog seems to be in severe pain, our emergency line is available — would you like me to transfer you now, or shall I book that appointment?",
@@ -154,7 +154,7 @@ const industries = [
       "Clients expect prompt, professional responses year-round",
     ],
     solution:
-      "PrimeReception scales with your call volume — no hiring or training needed. We handle appointment scheduling, answer questions about document requirements, and capture new client inquiries. Perfect for managing the seasonal surge without the overhead.",
+      "Prime Reception scales with your call volume — no hiring or training needed. We handle appointment scheduling, answer questions about document requirements, and capture new client inquiries. Perfect for managing the seasonal surge without the overhead.",
     scenario: {
       caller: "New client calling about tax preparation services",
       ai: "Thank you for calling Summit CPA Group! I'd be happy to help you with tax preparation. We offer individual and business tax services. Could I get your name and a good callback number? I'll also need to know if this is for personal taxes, a business, or both. One of our CPAs will reach out within one business day to discuss your specific needs and pricing.",
@@ -175,7 +175,7 @@ export default function Industries() {
             </h1>
             <p className="mt-6 text-lg text-gray-300 leading-relaxed">
               We specialize in industries where every missed call means lost
-              revenue. See how PrimeReception solves your specific challenges.
+              revenue. See how Prime Reception solves your specific challenges.
             </p>
           </div>
         </div>
@@ -244,7 +244,7 @@ export default function Industries() {
                 {/* Solution */}
                 <div>
                   <h3 className="text-lg font-semibold text-navy mb-4">
-                    How PrimeReception Helps
+                    How Prime Reception Helps
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     {ind.solution}
@@ -291,7 +291,7 @@ export default function Industries() {
               Don&apos;t See Your Industry?
             </h2>
             <p className="mt-4 text-gray-300 leading-relaxed">
-              PrimeReception works for any business that answers phone calls. If
+              Prime Reception works for any business that answers phone calls. If
               your team misses calls, we can help. Book a demo and we&apos;ll
               build a custom solution for your industry.
             </p>

@@ -274,11 +274,11 @@ export default function Pricing() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
             <h2 className="text-3xl font-bold text-navy sm:text-4xl">
-              PrimeReception Pays For Itself
+              Prime Reception Pays For Itself
             </h2>
             <p className="mt-4 text-gray-600 leading-relaxed">
               If you miss just 5 calls a month and each customer is worth $500,
-              that&apos;s $2,500/month in lost revenue. PrimeReception pays for
+              that&apos;s $2,500/month in lost revenue. Prime Reception pays for
               itself with the first call we catch.
             </p>
           </div>

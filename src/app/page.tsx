@@ -7,6 +7,7 @@ import NetworkGraph from "@/components/NetworkGraph";
 import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import ElevenLabsWidget from "@/components/ElevenLabsWidget";
+import TryInBrowserBtn from "@/components/TryInBrowserBtn";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <HeroHeading />
             <p className="mt-6 text-lg text-white/75 leading-relaxed max-w-lg sm:text-xl">
-              PrimeReception answers every call with natural AI — so you never
+              Prime Reception answers every call with natural AI — so you never
               miss a patient, client, or customer again.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -70,9 +71,7 @@ export default function Home() {
               </svg>
               Call (424) 788-5134
             </a>
-            <span className="text-sm text-navy/60">
-              or click the chat bubble to try in your browser
-            </span>
+            <TryInBrowserBtn />
           </div>
         </div>
       </section>
@@ -122,10 +121,12 @@ export default function Home() {
             </p>
 
             <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
-              {/* Card 1 */}
+              {/* Card 1 — Phone */}
               <div className="text-center">
-                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-teal/15">
-                  <span className="text-6xl">&#128222;</span>
+                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-teal/10">
+                  <svg className="h-16 w-16 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-bold text-navy">
                   24/7 call answering
@@ -136,10 +137,12 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Card 2 */}
+              {/* Card 2 — Calendar */}
               <div className="text-center">
-                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-teal/15">
-                  <span className="text-6xl">&#128203;</span>
+                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-teal/10">
+                  <svg className="h-16 w-16 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                  </svg>
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-bold text-navy">
                   Appointment capture
@@ -150,10 +153,12 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Card 3 */}
+              {/* Card 3 — Upward chart */}
               <div className="text-center">
-                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-green/12">
-                  <span className="text-6xl">&#128200;</span>
+                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-teal/10">
+                  <svg className="h-16 w-16 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                  </svg>
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-bold text-navy">
                   Lead capture &amp; routing
@@ -174,7 +179,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-16">
               <h2 className="font-serif text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
-                How PrimeReception works
+                How Prime Reception works
               </h2>
               <Link
                 href="/how-it-works"
@@ -280,7 +285,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
-                Practices love PrimeReception
+                Practices love Prime Reception
               </h2>
               <div className="mt-8 flex flex-col items-center">
                 <p className="text-7xl font-bold text-navy sm:text-8xl">98%</p>
@@ -316,35 +321,18 @@ export default function Home() {
           />
 
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-xs font-semibold uppercase tracking-widest text-navy/50 mb-10">
-              As Seen In
-            </p>
-
             {/* Pull quote */}
             <blockquote className="mx-auto max-w-3xl text-center">
               <p className="font-serif text-2xl font-bold text-navy leading-snug sm:text-3xl lg:text-4xl">
-                &ldquo;PrimeReception is doing for phone calls what online
+                &ldquo;Prime Reception is doing for phone calls what online
                 booking did for appointments — making them effortless for
                 everyone involved.&rdquo;
               </p>
-              <footer className="mt-6 text-sm text-text-body">
-                &mdash; Industry Observer
-              </footer>
             </blockquote>
 
-            {/* Press logos placeholder row */}
-            <div className="mt-16 flex flex-wrap items-center justify-center gap-10">
-              {["TechHealth Weekly", "Practice Growth", "AI Business Today", "Startup Review"].map(
-                (name) => (
-                  <span
-                    key={name}
-                    className="text-sm font-semibold text-navy/25 uppercase tracking-wider"
-                  >
-                    {name}
-                  </span>
-                )
-              )}
-            </div>
+            <p className="mt-10 text-center text-sm font-semibold text-navy/40 uppercase tracking-widest">
+              Trusted by 50+ practices nationwide
+            </p>
           </div>
         </section>
       </ScrollReveal>

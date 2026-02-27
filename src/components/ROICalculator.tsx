@@ -75,7 +75,7 @@ export default function ROICalculator() {
           </p>
           <div className="mt-4 pt-4 border-t border-white/20">
             <p className="text-sm text-gray-300">
-              PrimeReception starts at just{" "}
+              Prime Reception starts at just{" "}
               <span className="font-bold text-green">$249/month</span> —
               less than the cost of one missed customer.
             </p>

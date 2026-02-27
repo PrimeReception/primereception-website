@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About — AI Phone Answering Built for Small Business",
   description:
-    "PrimeReception gives businesses a reliable AI receptionist that answers calls, handles the basics, and routes the right conversations to the right place.",
+    "Prime Reception gives businesses a reliable AI receptionist that answers calls, handles the basics, and routes the right conversations to the right place.",
 };
 
 export default function About() {
@@ -26,14 +26,14 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl space-y-6 text-gray-600 leading-relaxed">
             <p>
-              PrimeReception was built because too many small businesses lose
+              Prime Reception was built because too many small businesses lose
               revenue the same way: calls go unanswered, staff get interrupted,
               and potential customers hang up. When the front desk is stretched
               thin, the phone becomes a constant leak — lost appointments, lost
               quotes, and frustrated callers.
             </p>
             <p>
-              PrimeReception gives businesses a reliable AI receptionist that
+              Prime Reception gives businesses a reliable AI receptionist that
               answers calls, handles the basics, and routes the right
               conversations to the right place. It&apos;s built for real-world
               operations: busy hours, inconsistent call volume, and teams that
@@ -43,7 +43,7 @@ export default function About() {
             <p>
               Two things drive everything we build: making the experience sound
               professional to your customers and making the setup painless for
-              your team. PrimeReception is designed to be practical first —
+              your team. Prime Reception is designed to be practical first —
               clear call handling, clean handoffs, and measurable impact.
             </p>
           </div>
@@ -146,7 +146,7 @@ export default function About() {
               Let&apos;s Talk About Your Business
             </h2>
             <p className="mt-4 text-gray-300 leading-relaxed">
-              Book a free demo and see how PrimeReception can work for you.
+              Book a free demo and see how Prime Reception can work for you.
               No obligation, no pressure.
             </p>
             <div className="mt-10">

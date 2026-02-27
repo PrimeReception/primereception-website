@@ -4,7 +4,7 @@ import { CONTACT } from "@/lib/contact";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "PrimeReception's terms of service. Review the terms governing use of our AI receptionist service.",
+    "Prime Reception's terms of service. Review the terms governing use of our AI receptionist service.",
 };
 
 export default function Terms() {
@@ -31,7 +31,7 @@ export default function Terms() {
                 1. Agreement to Terms
               </h2>
               <p>
-                By accessing or using PrimeReception&apos;s website and services,
+                By accessing or using Prime Reception&apos;s website and services,
                 you agree to be bound by these Terms of Service. If you do not
                 agree, do not use our services.
               </p>
@@ -42,7 +42,7 @@ export default function Terms() {
                 2. Description of Service
               </h2>
               <p>
-                PrimeReception provides AI-powered phone answering and call
+                Prime Reception provides AI-powered phone answering and call
                 handling services for businesses. Our service includes an AI
                 receptionist that answers calls, takes messages, captures lead
                 information, and routes calls according to rules you define
@@ -133,7 +133,7 @@ export default function Terms() {
                 7. Sensitive Information &amp; Compliance
               </h2>
               <p>
-                PrimeReception is designed to minimize the collection of
+                Prime Reception is designed to minimize the collection of
                 sensitive information during calls. If your business handles
                 protected health information (PHI) or other regulated data, we
                 will configure call handling to limit what is captured and route
@@ -162,7 +162,7 @@ export default function Terms() {
                 9. Limitation of Liability
               </h2>
               <p>
-                To the maximum extent permitted by law, PrimeReception shall not
+                To the maximum extent permitted by law, Prime Reception shall not
                 be liable for any indirect, incidental, special, consequential,
                 or punitive damages, including but not limited to loss of
                 revenue, lost profits, or loss of business opportunities,
@@ -178,7 +178,7 @@ export default function Terms() {
               </h2>
               <p>
                 All content, branding, and technology associated with
-                PrimeReception are our property or licensed to us. You retain
+                Prime Reception are our property or licensed to us. You retain
                 ownership of business information and content you provide to us
                 for configuration purposes.
               </p>

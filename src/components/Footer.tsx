@@ -112,7 +112,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 border-t border-navy/10 pt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <p className="text-sm text-text-body">
-            &copy; {new Date().getFullYear()} PrimeReception. All rights
+            &copy; {new Date().getFullYear()} Prime Reception. All rights
             reserved.
           </p>
           <div className="flex gap-6">

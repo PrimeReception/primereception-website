@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How It Works — 100% Done-For-You AI Receptionist Implementation",
   description:
-    "See how PrimeReception sets up your AI receptionist in 5 business days. We handle everything — voice setup, scripts, FAQ training, and go-live support.",
+    "See how Prime Reception sets up your AI receptionist in 5 business days. We handle everything — voice setup, scripts, FAQ training, and go-live support.",
 };
 
 export default function HowItWorks() {
@@ -254,7 +254,7 @@ export default function HowItWorks() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
             <h2 className="text-3xl font-bold text-navy sm:text-4xl">
-              A Day in the Life with PrimeReception
+              A Day in the Life with Prime Reception
             </h2>
             <p className="mt-4 text-gray-600 leading-relaxed">
               Here&apos;s how a typical day looks when your AI receptionist is
@@ -326,7 +326,7 @@ export default function HowItWorks() {
             </h2>
             <p className="mt-4 text-gray-300 leading-relaxed">
               Book a free demo and we&apos;ll show you exactly how
-              PrimeReception will work for your business.
+              Prime Reception will work for your business.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link

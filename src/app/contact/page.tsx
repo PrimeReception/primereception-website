@@ -6,7 +6,7 @@ import CalendlyEmbed from "@/components/CalendlyEmbed";
 export const metadata: Metadata = {
   title: "Book a Demo — AI Receptionist for Your Business",
   description:
-    "Book a free demo of PrimeReception's AI receptionist. See how we can answer your calls 24/7. No obligation, no pressure.",
+    "Book a free demo of Prime Reception's AI receptionist. See how we can answer your calls 24/7. No obligation, no pressure.",
 };
 
 export default function Contact() {
@@ -20,7 +20,7 @@ export default function Contact() {
               Book Your Free Demo
             </h1>
             <p className="mt-6 text-lg text-gray-300 leading-relaxed">
-              See how PrimeReception can work for your business. Fill out the
+              See how Prime Reception can work for your business. Fill out the
               form below and pick a time that works for you.
             </p>
           </div>

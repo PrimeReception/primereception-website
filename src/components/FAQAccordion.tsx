@@ -26,7 +26,7 @@ const faqs = [
   {
     question: "How do you handle sensitive information (HIPAA)?",
     answer:
-      "PrimeReception is designed to minimize sensitive information collection. If your workflow involves protected health information, we configure call handling to limit what's captured and route appropriately. You remain responsible for your compliance requirements, and we'll align configuration to your policies and vendor agreements.",
+      "Prime Reception is designed to minimize sensitive information collection. If your workflow involves protected health information, we configure call handling to limit what's captured and route appropriately. You remain responsible for your compliance requirements, and we'll align configuration to your policies and vendor agreements.",
   },
   {
     question: "Can I customize how the AI responds?",

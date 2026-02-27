@@ -18,11 +18,11 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: {
     default:
-      "PrimeReception — AI Receptionist for Small Businesses | Never Miss a Call",
-    template: "%s | PrimeReception",
+      "Prime Reception — AI Receptionist for Small Businesses | Never Miss a Call",
+    template: "%s | Prime Reception",
   },
   description:
-    "PrimeReception answers every call 24/7 with natural AI so you never miss a lead. Done-for-you AI receptionist for dental offices, med spas, auto body shops & more.",
+    "Prime Reception answers every call 24/7 with natural AI so you never miss a lead. Done-for-you AI receptionist for dental offices, med spas, auto body shops & more.",
   keywords: [
     "AI receptionist",
     "AI phone answering service",
@@ -35,23 +35,23 @@ export const metadata: Metadata = {
     "small business phone answering",
     "AI call answering",
   ],
-  authors: [{ name: "PrimeReception" }],
-  creator: "PrimeReception",
+  authors: [{ name: "Prime Reception" }],
+  creator: "Prime Reception",
   metadataBase: new URL("https://primereception.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "PrimeReception",
+    siteName: "Prime Reception",
     title:
-      "PrimeReception — AI Receptionist for Small Businesses | Never Miss a Call",
+      "Prime Reception — AI Receptionist for Small Businesses | Never Miss a Call",
     description:
-      "PrimeReception answers every call 24/7 with natural AI so you never miss a lead. Done-for-you setup. Plans from $249/month.",
+      "Prime Reception answers every call 24/7 with natural AI so you never miss a lead. Done-for-you setup. Plans from $249/month.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PrimeReception — AI Receptionist for Small Businesses",
+    title: "Prime Reception — AI Receptionist for Small Businesses",
     description:
-      "Stop losing customers to missed calls. PrimeReception answers every call 24/7 with natural AI. Plans from $249/month.",
+      "Stop losing customers to missed calls. Prime Reception answers every call 24/7 with natural AI. Plans from $249/month.",
   },
   icons: {
     icon: "/icon-final.png",
