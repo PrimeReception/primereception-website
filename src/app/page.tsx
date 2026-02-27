@@ -80,33 +80,120 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== 2. ZIP / CONTACT BAR ====== */}
+      {/* ====== 2. PRICING ====== */}
       <ScrollReveal>
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-white py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-serif text-3xl font-bold text-navy sm:text-4xl">
-                See if we cover your practice
+            <div className="mx-auto max-w-2xl text-center mb-16">
+              <h2 className="font-serif text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
+                Simple, transparent pricing
               </h2>
               <p className="mt-4 text-text-body">
-                Enter your zip code to check availability in your area.
+                No hidden fees. No per-minute charges. Cancel anytime.
               </p>
-              <div className="mt-8 flex items-center justify-center gap-3">
-                <input
-                  type="text"
-                  placeholder="Enter your zip code"
-                  className="w-full max-w-xs rounded-lg border border-navy/15 bg-cream px-5 py-3.5 text-sm text-navy placeholder:text-text-body/50 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
-                />
+            </div>
+
+            <div className="mx-auto max-w-5xl grid grid-cols-1 gap-8 md:grid-cols-2">
+              {/* Core */}
+              <div className="rounded-2xl border border-navy/10 bg-white p-8 md:p-10 shadow-sm flex flex-col">
+                <h3 className="font-serif text-2xl font-bold text-navy">Core</h3>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-4xl font-bold text-navy">$249</span>
+                  <span className="text-text-body">/month</span>
+                </div>
+                <p className="mt-1 text-xs text-text-body/70">+ $750 one-time setup fee</p>
+                <p className="mt-4 text-sm text-text-body leading-relaxed">
+                  Best for solo practitioners and small offices with moderate call volume.
+                </p>
+                <ul className="mt-8 space-y-3 flex-1">
+                  {[
+                    "AI-powered call answering",
+                    "Up to 150 calls/month",
+                    "Business hours coverage (M\u2013F 8am\u20136pm)",
+                    "Message taking & lead capture",
+                    "Basic FAQ handling",
+                    "Appointment capture",
+                    "1 call forwarding number",
+                    "Custom greeting script",
+                    "1 script revision included",
+                    "Email support",
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-text-body">
+                      <svg className="h-5 w-5 shrink-0 text-teal mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
                 <Link
                   href="/contact"
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-teal text-white hover:bg-green transition-colors"
-                  aria-label="Check availability"
+                  className="mt-8 block text-center rounded border-2 border-teal px-6 py-3 text-sm font-semibold uppercase tracking-widest text-teal hover:bg-teal hover:text-white transition-colors"
                 >
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  Get Started
                 </Link>
+                <p className="mt-3 text-[11px] text-text-body/60 text-center leading-snug">
+                  Setup includes: custom voice, greeting script, phone number configuration &amp; testing
+                </p>
               </div>
+
+              {/* Pro */}
+              <div className="relative rounded-2xl border-2 border-teal bg-white p-8 md:p-10 shadow-lg flex flex-col">
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-semibold uppercase tracking-widest text-white">
+                  Most Popular
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-navy">Pro</h3>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-4xl font-bold text-navy">$399</span>
+                  <span className="text-text-body">/month</span>
+                </div>
+                <p className="mt-1 text-xs text-text-body/70">+ $1,500 one-time setup fee</p>
+                <p className="mt-4 text-sm text-text-body leading-relaxed">
+                  Best for dental offices, med spas, and busy service businesses with steady call volume.
+                </p>
+                <ul className="mt-8 space-y-3 flex-1">
+                  {[
+                    "Everything in Core, plus:",
+                    "Up to 500 calls/month",
+                    "24/7 coverage incl. weekends & holidays",
+                    "Custom FAQ & script training",
+                    "Up to 3 call forwarding numbers",
+                    "Unlimited script revisions",
+                    "SMS call alerts (coming soon)",
+                    "Priority voice & script optimization",
+                    "30-day optimization window post-launch",
+                    "Phone & email support",
+                    "Founder-led onboarding & optimization",
+                  ].map((f, i) => (
+                    <li key={f} className={`flex items-start gap-2.5 text-sm text-text-body ${i === 0 ? "font-semibold text-navy" : ""}`}>
+                      {i === 0 ? null : (
+                        <svg className="h-5 w-5 shrink-0 text-teal mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/contact"
+                  className="mt-8 block text-center rounded bg-teal px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white hover:bg-green transition-colors"
+                >
+                  Get Started
+                </Link>
+                <p className="mt-3 text-[11px] text-text-body/60 text-center leading-snug">
+                  Setup includes: everything in Core + custom FAQ training session, multi-number setup, script workshop with founder
+                </p>
+              </div>
+            </div>
+
+            <div className="mx-auto max-w-2xl mt-12 text-center space-y-3">
+              <p className="text-sm text-navy font-medium">
+                The average practice recoups their investment within the first week — just 3–5 recovered missed calls pays for a full month.
+              </p>
+              <p className="text-xs text-text-body/60">
+                *Need more than 500 calls/month? <Link href="/contact" className="text-teal hover:underline">Contact us</Link> for a custom Enterprise plan.
+              </p>
             </div>
           </div>
         </section>
