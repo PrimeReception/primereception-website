@@ -6,27 +6,28 @@ const WORDS = ["Work", "Chat", "Life"];
 const FINAL = "Calls";
 const ALL = [...WORDS, FINAL];
 
-// Enter: explosive launch then smooth deceleration with overshoot
-const ENTER = "0.4s cubic-bezier(0.22, 1.4, 0.36, 1)";
+// Enter: explosive start, smooth deceleration (no overshoot — text is right-aligned)
+const ENTER = "0.4s cubic-bezier(0.16, 1, 0.3, 1)";
 // Exit: slow start then WHOOSH yanked away
 const EXIT_DUR = "0.35s";
 const EXIT_EASE = "cubic-bezier(0.7, 0, 0.84, 0)";
 
 export default function HeroHeading() {
   const [step, setStep] = useState(-1);
-  const [widths, setWidths] = useState<number[]>([]);
+  const [maxWidth, setMaxWidth] = useState<number | undefined>();
   const measureRef = useRef<HTMLSpanElement>(null);
 
-  // Measure each word's rendered width (re-measure on resize)
+  // Measure all words, use the widest for fixed container
   useEffect(() => {
     const measure = () => {
       if (!measureRef.current) return;
       const spans = measureRef.current.children;
-      const w: number[] = [];
+      let max = 0;
       for (let i = 0; i < spans.length; i++) {
-        w.push((spans[i] as HTMLElement).getBoundingClientRect().width);
+        const w = (spans[i] as HTMLElement).getBoundingClientRect().width;
+        if (w > max) max = w;
       }
-      setWidths(w);
+      setMaxWidth(Math.ceil(max) + 2);
     };
     measure();
     window.addEventListener("resize", measure);
@@ -43,12 +44,6 @@ export default function HeroHeading() {
     ];
     return () => timers.forEach(clearTimeout);
   }, []);
-
-  // Dynamic width based on active word
-  const activeIdx = step < 0 ? 0 : step >= 3 ? 3 : step;
-  const containerWidth = widths[activeIdx]
-    ? Math.ceil(widths[activeIdx]) + 1
-    : undefined;
 
   return (
     <h1
@@ -78,19 +73,15 @@ export default function HeroHeading() {
       </span>
 
       {/*
-        Two-layer structure:
-        - OUTER span: inline-block, no overflow (preserves text baseline)
-        - INNER span: absolute + overflow-hidden (clips animated words)
-        Width transitions dynamically to match the active word.
+        Fixed-width container + text-right = "made" never moves.
+        Shorter words get extra space on the LEFT (leading edge).
+        Two-layer: outer inline-block (baseline), inner absolute (clipping).
       */}
       <span
-        className="inline-block relative"
-        style={{
-          width: containerWidth ? `${containerWidth}px` : undefined,
-          transition: step >= 0 ? "width 0.3s ease" : "none",
-        }}
+        className="inline-block relative text-right"
+        style={{ width: maxWidth ? `${maxWidth}px` : undefined }}
       >
-        {/* Invisible sizer — provides height and baseline only */}
+        {/* Invisible sizer — provides height and baseline */}
         <span className="invisible" aria-hidden="true">
           {FINAL}
         </span>
@@ -128,7 +119,7 @@ export default function HeroHeading() {
             return (
               <span
                 key={word}
-                className="absolute inset-0 text-white/40 font-normal"
+                className="absolute inset-0 text-right text-white/40 font-normal"
                 style={style}
               >
                 {word}
@@ -138,7 +129,7 @@ export default function HeroHeading() {
 
           {/* Calls — drops from above with bounce (full white, bold) */}
           <span
-            className="absolute inset-0"
+            className="absolute inset-0 text-right"
             style={
               step < 3
                 ? { transform: "translateY(-150%)", opacity: 0 }
