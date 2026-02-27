@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CONTACT } from "@/lib/contact";
 import FAQAccordion from "@/components/FAQAccordion";
 import HeroHeading from "@/components/HeroHeading";
-import DriftingArrows from "@/components/DriftingArrows";
+import NetworkGraph from "@/components/NetworkGraph";
 import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 
@@ -11,8 +11,8 @@ export default function Home() {
     <main>
       {/* ====== 1. HERO ====== */}
       <section className="relative bg-navy overflow-hidden min-h-[92vh] flex items-center">
-        {/* Drifting arrow watermarks */}
-        <DriftingArrows />
+        {/* Network graph connections */}
+        <NetworkGraph />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 md:py-40">
           <div className="max-w-2xl">
