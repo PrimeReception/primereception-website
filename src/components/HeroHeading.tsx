@@ -15,19 +15,28 @@ const EXIT_EASE = "cubic-bezier(0.7, 0, 0.84, 0)";
 export default function HeroHeading() {
   const [step, setStep] = useState(-1);
   const [maxWidth, setMaxWidth] = useState<number | undefined>();
+  const [easyIndent, setEasyIndent] = useState<number>(0);
   const measureRef = useRef<HTMLSpanElement>(null);
 
-  // Measure all words, use the widest for fixed container
+  // Measure all words + "C" character for indent calculation
   useEffect(() => {
     const measure = () => {
       if (!measureRef.current) return;
       const spans = measureRef.current.children;
+      // First ALL.length spans are the words, last span is "C" alone
       let max = 0;
-      for (let i = 0; i < spans.length; i++) {
+      const wordWidths: number[] = [];
+      for (let i = 0; i < ALL.length; i++) {
         const w = (spans[i] as HTMLElement).getBoundingClientRect().width;
+        wordWidths.push(w);
         if (w > max) max = w;
       }
-      setMaxWidth(Math.ceil(max) + 2);
+      const cW = (spans[ALL.length] as HTMLElement).getBoundingClientRect().width;
+      const callsW = wordWidths[ALL.length - 1]; // "Calls" is last
+      const mw = Math.ceil(max) + 2;
+      setMaxWidth(mw);
+      // "a" position = right-align offset of "Calls" + width of "C"
+      setEasyIndent(mw - callsW + cW);
     };
     measure();
     window.addEventListener("resize", measure);
@@ -70,6 +79,8 @@ export default function HeroHeading() {
             {word}
           </span>
         ))}
+        {/* "C" alone — for computing indent of "easy." under the "a" in "Calls" */}
+        <span className="inline-block whitespace-nowrap">C</span>
       </span>
 
       {/*
@@ -142,7 +153,9 @@ export default function HeroHeading() {
       </span>{" "}
       made
       <br />
-      easy.
+      <span style={{ paddingLeft: easyIndent ? `${easyIndent}px` : undefined }}>
+        easy.
+      </span>
     </h1>
   );
 }
