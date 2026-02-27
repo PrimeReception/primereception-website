@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const WORDS = ["Life", "Chat", "Work"];
+const WORDS = ["Life", "Work"];
 const FINAL = "Calls";
 const ALL = [...WORDS, FINAL];
 
@@ -49,7 +49,6 @@ export default function HeroHeading() {
       setTimeout(() => setStep(0), 100),
       setTimeout(() => setStep(1), 1100),
       setTimeout(() => setStep(2), 2100),
-      setTimeout(() => setStep(3), 3100),
     ];
     return () => timers.forEach(clearTimeout);
   }, []);
@@ -58,7 +57,7 @@ export default function HeroHeading() {
     <h1
       className="font-serif text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.1] relative"
       style={
-        step === 3
+        step === 2
           ? { animation: "hero-shake 0.3s ease-out 0.35s" }
           : undefined
       }
@@ -99,7 +98,7 @@ export default function HeroHeading() {
 
         {/* Clipping layer */}
         <span className="absolute inset-0 overflow-hidden">
-          {/* Sliding words: Work → Chat → Life */}
+          {/* Sliding words: Life → Work */}
           {WORDS.map((word, i) => {
             const style: React.CSSProperties = {};
 
@@ -110,7 +109,7 @@ export default function HeroHeading() {
               style.transform =
                 "translateX(0) scaleX(1) scaleY(1) skewX(0deg)";
               style.transition = `transform ${ENTER}`;
-            } else if (i === 2 && step === 3) {
+            } else if (i === 1 && step === 2) {
               style.transform =
                 "translateX(0) scaleX(1) scaleY(0) skewX(0deg)";
               style.transformOrigin = "bottom";
@@ -142,7 +141,7 @@ export default function HeroHeading() {
           <span
             className="absolute inset-0 text-right"
             style={
-              step < 3
+              step < 2
                 ? { transform: "translateY(-150%)", opacity: 0 }
                 : { animation: "hero-drop 0.8s linear forwards" }
             }
