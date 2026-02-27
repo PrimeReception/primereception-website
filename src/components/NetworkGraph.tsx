@@ -21,7 +21,7 @@ interface Pulse {
 }
 
 const CONNECTION_DIST = 180;
-const NODE_COUNT = 20;
+const NODE_COUNT = 12;
 
 export default function NetworkGraph() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -98,7 +98,7 @@ export default function NetworkGraph() {
             ctx!.beginPath();
             ctx!.moveTo(nodes[i].x, nodes[i].y);
             ctx!.lineTo(nodes[j].x, nodes[j].y);
-            ctx!.strokeStyle = `rgba(255, 255, 255, ${lineOpacity})`;
+            ctx!.strokeStyle = `rgba(13, 139, 139, ${lineOpacity})`;
             ctx!.lineWidth = 1;
             ctx!.stroke();
           }

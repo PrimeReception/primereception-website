@@ -38,7 +38,7 @@ export default function Footer() {
             </ul>
             <Link
               href="/contact"
-              className="mt-6 inline-block rounded bg-gold px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-burnt transition-colors"
+              className="mt-6 inline-block rounded bg-teal px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-green transition-colors"
             >
               Get Started
             </Link>

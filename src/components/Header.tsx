@@ -63,7 +63,7 @@ export default function Header() {
           {/* Right — GET STARTED */}
           <Link
             href="/contact"
-            className="hidden sm:inline-block rounded bg-gold px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-burnt transition-colors"
+            className="hidden sm:inline-block rounded bg-teal px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-green transition-colors"
           >
             Get Started
           </Link>
@@ -91,7 +91,7 @@ export default function Header() {
                   className={`px-2 py-3 text-sm font-medium transition-colors ${
                     transparent
                       ? "text-white/90 hover:text-white"
-                      : "text-navy hover:text-gold"
+                      : "text-navy hover:text-teal"
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -100,7 +100,7 @@ export default function Header() {
               ))}
               <Link
                 href="/contact"
-                className="mt-3 rounded bg-gold px-5 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white hover:bg-burnt transition-colors"
+                className="mt-3 rounded bg-teal px-5 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white hover:bg-green transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Started

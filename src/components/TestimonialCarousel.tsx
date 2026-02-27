@@ -79,9 +79,9 @@ export default function TestimonialCarousel() {
         {testimonials.map((t, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-[320px] snap-start rounded-2xl bg-navy border-l-4 border-gold p-8 text-white"
+            className="flex-shrink-0 w-[320px] snap-start rounded-2xl bg-navy border-l-4 border-teal p-8 text-white"
           >
-            <svg className="h-8 w-8 text-gold mb-4 opacity-60" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="h-8 w-8 text-teal mb-4 opacity-60" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <p className="text-sm leading-relaxed text-white/90 mb-6">

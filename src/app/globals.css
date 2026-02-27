@@ -4,26 +4,26 @@
   /* === Brand palette (logo-derived) === */
   --color-navy: #1B2D4F;
   --color-navy-deep: #142240;
-  --color-gold: #D4943A;
-  --color-burnt: #C4632A;
+  --color-gold: #0D8B8B;
+  --color-burnt: #2BAE66;
   --color-rose: #8B6B7B;
-  --color-teal: #4A7B8A;
-  --color-cream: #FDF8F0;
+  --color-teal: #0D8B8B;
+  --color-cream: #F3F6F8;
   --color-text-navy: #1B2D4F;
   --color-text-body: #4A5B6E;
-  --color-green: #10B981;
+  --color-green: #2BAE66;
 
   /* === Backward-compat aliases (used by other pages) === */
   --color-navy-light: #1F4470;
   --color-navy-dark: #142240;
-  --color-coral: #D4943A;
-  --color-coral-hover: #C4632A;
-  --color-yellow: #D4943A;
+  --color-coral: #0D8B8B;
+  --color-coral-hover: #2BAE66;
+  --color-yellow: #0D8B8B;
   --color-sage: #8B6B7B;
-  --color-teal-dark: #3D6A77;
+  --color-teal-dark: #087070;
   --color-charcoal: #1B2D4F;
-  --color-ice: #FDF8F0;
-  --color-gray-bg: #FDF8F0;
+  --color-ice: #F3F6F8;
+  --color-gray-bg: #F3F6F8;
 
   /* === Fonts === */
   --font-sans: var(--font-inter);
@@ -41,7 +41,7 @@ html {
 }
 
 ::selection {
-  background-color: #D4943A;
+  background-color: #0D8B8B;
   color: white;
 }
 

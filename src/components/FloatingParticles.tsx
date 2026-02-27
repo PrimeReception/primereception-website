@@ -74,7 +74,7 @@ export default function FloatingParticles() {
     }
 
     // Seed particles across the full height
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 15; i++) {
       particlesRef.current.push(spawn(true));
     }
 
@@ -87,9 +87,9 @@ export default function FloatingParticles() {
 
       const particles = particlesRef.current;
 
-      // Spawn to maintain ~25 particles
-      spawnAccum += 0.45;
-      while (spawnAccum >= 1 && particles.length < 30) {
+      // Spawn to maintain ~15 particles
+      spawnAccum += 0.3;
+      while (spawnAccum >= 1 && particles.length < 18) {
         spawnAccum -= 1;
         particles.push(spawn());
       }

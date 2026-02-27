@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CONTACT } from "@/lib/contact";
 import FAQAccordion from "@/components/FAQAccordion";
 import HeroHeading from "@/components/HeroHeading";
+import FloatingParticles from "@/components/FloatingParticles";
 import NetworkGraph from "@/components/NetworkGraph";
 import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
@@ -11,7 +12,8 @@ export default function Home() {
     <main>
       {/* ====== 1. HERO ====== */}
       <section className="relative bg-navy overflow-hidden min-h-[92vh] flex items-center">
-        {/* Network graph connections */}
+        {/* Layered hero animations */}
+        <FloatingParticles />
         <NetworkGraph />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 md:py-40">
@@ -24,7 +26,7 @@ export default function Home() {
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-block rounded bg-gold px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white hover:bg-burnt transition-colors"
+                className="inline-block rounded bg-teal px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white hover:bg-green transition-colors"
               >
                 Get Started
               </Link>
@@ -61,7 +63,7 @@ export default function Home() {
                 />
                 <Link
                   href="/contact"
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gold text-white hover:bg-burnt transition-colors"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-teal text-white hover:bg-green transition-colors"
                   aria-label="Check availability"
                 >
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +91,7 @@ export default function Home() {
             <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
               {/* Card 1 */}
               <div className="text-center">
-                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-gold/15">
+                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-teal/15">
                   <span className="text-6xl">&#128222;</span>
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-bold text-navy">
@@ -117,7 +119,7 @@ export default function Home() {
 
               {/* Card 3 */}
               <div className="text-center">
-                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-burnt/12">
+                <div className="mx-auto flex h-40 w-full max-w-[280px] items-center justify-center rounded-2xl bg-green/12">
                   <span className="text-6xl">&#128200;</span>
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-bold text-navy">
@@ -143,7 +145,7 @@ export default function Home() {
               </h2>
               <Link
                 href="/how-it-works"
-                className="text-xs font-semibold uppercase tracking-widest text-gold hover:text-burnt transition-colors"
+                className="text-xs font-semibold uppercase tracking-widest text-teal hover:text-green transition-colors"
               >
                 Learn More &rarr;
               </Link>
@@ -228,7 +230,7 @@ export default function Home() {
               <span className="text-3xl font-bold text-navy/30 select-none">=</span>
 
               {/* Result */}
-              <div className="rounded-2xl border-2 border-gold/30 bg-gold/5 px-8 py-6 text-center max-w-sm w-full">
+              <div className="rounded-2xl border-2 border-teal/30 bg-teal/5 px-8 py-6 text-center max-w-sm w-full">
                 <p className="font-serif text-lg font-bold text-navy">
                   A front desk your patients will love, at a fraction of the cost
                 </p>
@@ -250,12 +252,12 @@ export default function Home() {
               <div className="mt-8 flex flex-col items-center">
                 <p className="text-7xl font-bold text-navy sm:text-8xl">98%</p>
                 <p className="mt-2 text-sm text-text-body">satisfaction rate</p>
-                {/* 5 gold stars */}
+                {/* 5 green stars */}
                 <div className="mt-4 flex gap-1">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className="h-7 w-7 text-gold"
+                      className="h-7 w-7 text-teal"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -274,9 +276,9 @@ export default function Home() {
       {/* ====== 7. PRESS / SOCIAL PROOF ====== */}
       <ScrollReveal>
         <section className="relative bg-cream py-20 md:py-28 overflow-hidden">
-          {/* Warm gold glow behind the quote */}
+          {/* Subtle teal glow behind the quote */}
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-teal/10 blur-3xl"
             aria-hidden="true"
           />
 
@@ -325,7 +327,7 @@ export default function Home() {
             <div className="mt-10 text-center">
               <Link
                 href="/contact"
-                className="text-xs font-semibold uppercase tracking-widest text-gold hover:text-burnt transition-colors"
+                className="text-xs font-semibold uppercase tracking-widest text-teal hover:text-green transition-colors"
               >
                 See More Questions &rarr;
               </Link>
