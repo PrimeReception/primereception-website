@@ -47,9 +47,9 @@ export default function HeroHeading() {
   useEffect(() => {
     const timers = [
       setTimeout(() => setStep(0), 100),
-      setTimeout(() => setStep(1), 600),
-      setTimeout(() => setStep(2), 1100),
-      setTimeout(() => setStep(3), 1600),
+      setTimeout(() => setStep(1), 1100),
+      setTimeout(() => setStep(2), 2100),
+      setTimeout(() => setStep(3), 3100),
     ];
     return () => timers.forEach(clearTimeout);
   }, []);
