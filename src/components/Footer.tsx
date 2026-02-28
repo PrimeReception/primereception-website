@@ -12,7 +12,7 @@ export default function Footer() {
               <img
                 src="/logo-dark.png"
                 alt="PrimeReception"
-                className="h-[40px] w-auto object-contain"
+                className="w-[160px] sm:w-[180px] h-auto object-contain"
               />
             </Link>
             <h4 className="font-serif text-xl font-bold text-navy">
