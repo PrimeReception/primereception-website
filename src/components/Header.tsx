@@ -56,7 +56,7 @@ export default function Header() {
             <img
               src={transparent ? "/logo-white-text.png" : "/logo-dark.png"}
               alt="PrimeReception"
-              className="w-[240px] sm:w-[350px] h-auto object-contain transition-all duration-300"
+              className="w-[280px] sm:w-[420px] h-auto object-contain transition-all duration-300"
             />
           </Link>
 
