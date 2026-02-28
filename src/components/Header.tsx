@@ -33,7 +33,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-[120px] items-center justify-between">
+        <div className="flex h-[140px] items-center justify-between">
           {/* Hamburger — left */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -56,7 +56,7 @@ export default function Header() {
             <img
               src={transparent ? "/logo-white-text.png" : "/logo-dark.png"}
               alt="PrimeReception"
-              className="w-[200px] sm:w-[300px] h-auto object-contain transition-all duration-300"
+              className="w-[240px] sm:w-[350px] h-auto object-contain transition-all duration-300"
             />
           </Link>
 
